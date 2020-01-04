@@ -1,10 +1,10 @@
 <template>
   <div>
       <b-container fluid>              
-        <b-card no-body class="overflow-hidden" style="max-width: 80%; border: none; margin-top: 5%; margin-left: 10%">
+        <b-card no-body class="overflow-hidden" style="max-width: 60%; border: none; margin-top: 5%; margin-left: 20%">
             <b-row no-gutters> 
-              <b-col md="6" >
-                <b-card-img src="https://picsum.photos/400/400/?image=20" class="rounded-circle" style=''></b-card-img>
+              <b-col md="6"  >
+                <b-card-img src="https://picsum.photos/400/400/?image=20" class="rounded-circle" ></b-card-img>
               </b-col>
               <b-col md="6"> 
                 <b-card-body title="Kendall Roberts">
@@ -45,5 +45,16 @@ export default {
         display: flex; 
         flex-direction: column; 
         min-height: 100vh;
+    }
+    .rounded-circle{
+        width: 400px;
+        margin: 35px 25px 25px 25px;
+    }
+
+    .rounded-circle:hover{
+        -webkit-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
+        box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75); 
+        z-index: 1;  
     }
 </style>
