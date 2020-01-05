@@ -1,60 +1,71 @@
 <template>
-  <div>
-      <b-container fluid>              
-        <b-card no-body class="overflow-hidden" style="max-width: 60%; border: none; margin-top: 5%; margin-left: 20%">
-            <b-row no-gutters> 
-              <b-col md="6"  >
-                <b-card-img src="https://picsum.photos/400/400/?image=20" class="rounded-circle" ></b-card-img>
-              </b-col>
-              <b-col md="6"> 
-                <b-card-body title="Kendall Roberts">
-                  <hr>
-                  <b-card-text>
-                    Hello, Im Kendall Roberts. I am an aspiring software engineer/web deveoper. Currently enrolled at Ozarks Technical Community                     
-                    College hunting down that associate degree in Computer Information Science. Afterwards I hope to land a good job,                    
-                    possibly with you. I fell in love with code and tech long ago working on a project far far away. Which leads me to my next                     
-                    confession. I just so happen to be a mega nerd, but who isnt in this field right? I love Marvel, retro video games,                   
-                    new video games, new tech and those juicy gaming PC builds. Anyways take a look around im constantly learning 
-                    I just wanted to show off some of my skills with this website. Thanks!
-                  </b-card-text>
-                  <b-button variant="primary">Go somewhere</b-button>
-                </b-card-body>
-              </b-col>
-            </b-row>
-        </b-card>
-      </b-container>
-  </div>
+<div>
+      <b-card
+        overlay
+        v-bind:img-src="cliffMe"
+        img-alt="Card Image"
+        text-variant="white"
+        title="Kendall Roberts"
+        sub-title="Web Developer, Part-time dad joke comedian "
+        style="min-width: 100%; border: none;">
+
+      </b-card>
+    <b-card no-body class="overflow-hidden" style="min-width: 100%;
+    background-color: #261447; color: white;">
+    <b-row no-gutters>
+      <b-col lg="6">
+        <b-card-img v-bind:src="portraitMe" class="rounded-circle"
+        style="width: 80%; margin-left: 10%"></b-card-img>
+      </b-col>
+      <b-col sm="6">
+        <b-card-body title="Horizontal Card" >
+          <b-card-text>
+                Hello, Im Kendall Roberts. I am an aspiring web deveoper. Currently enrolled at Ozarks Technical Community                     
+                College hunting down that associate degree in Computer Information Science. I fell in love with code and tech 
+                a long time ago working on a project far far away. Anyways feel free to explore this website that I built using 
+                the Vue CLI
+          </b-card-text>
+        </b-card-body>
+      </b-col>
+    </b-row>
+  </b-card>
+</div>
 </template>
 
 <script>
-
+import cliffMe from '../assets/cliffMe.jpg';
+import bigMe from '../assets/bigMe.jpg';
+import portraitMe from '../assets/portraitMe.jpg';
 export default {
   name: 'home',
   data(){
       return{
-
+        cliffMe,
+        bigMe,
+        portraitMe
       }
   },
+
   props: {}
 }
 </script>
 
 
 <style scoped>
-    body{
-        display: flex; 
-        flex-direction: column; 
-        min-height: 100vh;
-    }
     .rounded-circle{
-        width: 400px;
-        margin: 35px 25px 25px 25px;
+
     }
 
     .rounded-circle:hover{
         -webkit-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
         box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75); 
+        transform: scale(1.1);
         z-index: 1;  
+    }
+
+    .card{
+      margin-bottom: .35%;
+      font-family: 'Varela Round', sans-serif;
     }
 </style>
