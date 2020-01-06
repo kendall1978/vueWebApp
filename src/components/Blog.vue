@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style >
-
+  
   .card-columns{
     padding: 2rem 0;
     column-gap: 1.5rem;

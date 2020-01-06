@@ -1,9 +1,8 @@
 <template>
   <div>
     <div class="aboveFooter">
-      <b-navbar toggleable="lg" type="dark" variant="dark">
-        <b-navbar-brand href="#">
-          <img src="./assets/KRlogo.png" id="bear" class="d-inline-block align-top" alt="Bear">
+      <b-navbar toggleable="lg" type="dark" style="background-color: #023040">
+        <b-navbar-brand style="color: #36827c;" href="/">
             Kendall Roberts
         </b-navbar-brand>
 
@@ -23,7 +22,7 @@
     
       <router-view></router-view>
     </div>
-    <footer id="sticky-footer">
+    <footer id="sticky-footer" style="background-color: #023040; color: #36827c;">
       <div class="container text-center">
         <small>Copyright &copy; Kendall Roberts</small>
       </div>
@@ -44,12 +43,14 @@ export default {
 </script>
 
 <style>
-  body{
-    font-family: 'Varela Round', sans-serif;
+
+  html{
+    background-color: #fe7e41;
   }
   
   .aboveFooter{
     min-height: 100vh;
+    background-color: #fe7e41;
   }
 
     #sticky-footer{
