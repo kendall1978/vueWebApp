@@ -81,8 +81,19 @@ export default {
   .card-columns{
     padding: 2rem 0;
     column-gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    margin-left: 6%;
+    width: 88%;
+    padding-bottom: 50px;
+
   }
+
+  #blogCard{
+    
+  }
+
+
+
 
   #blogCard:hover{
         -webkit-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);

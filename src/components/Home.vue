@@ -14,7 +14,7 @@
         <b-col sm="6">
           <b-card-body title="Kendall Roberts" >
             <b-card-text style="font-size: 14pt;">
-              Web-Deveoper, dog owner and part-time dad joke comedian
+              Web-Developer, dog owner and part-time dad joke comedian
             </b-card-text>
           </b-card-body>
         </b-col>
@@ -26,7 +26,7 @@
         <b-card-body>
           <b-card-text style="padding-top: 3rem; color: #511c0f; 
           font-size: 22pt;"><i>"No! Try not! Do or do not, there is no try"</i></b-card-text>
-            <footer style="color: #007471" class="blockquote-footer">
+            <footer style="color: #02525b; font-size: 13pt;" class="blockquote-footer">
               Yoda 
             </footer>
         </b-card-body>
@@ -37,7 +37,8 @@
           style="text-shadow: 0px 0px 2px #000; 
           margin: 25px 25px -webkit-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
-        box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75); "
+        box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
+        border: solid #02525b 4px; border-radius: 4px; "
           fade
           img-width="1024"
            >
@@ -133,6 +134,21 @@ export default {
         -moz-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
         box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75); 
         transform: scale(1.07); 
+        z-index: 1;
+        
+    }
+
+    #homeCards .card{
+      transition-duration: 500ms;
+      transition-property: box-shadow, transform;
+      transition-timing-function: ease-in-out;
+    }
+
+    .rounded-circle{
+      transition-duration: 500ms;
+      transition-property: transform, box-shadow;
+      border: solid #02525b 4px;
+      transition-timing-function: ease-in-out;
     }
 
     .rounded-circle:hover{
@@ -140,6 +156,7 @@ export default {
         -moz-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
         box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75); 
         transform: scale(1.1); 
+        
     }
 
     .card{

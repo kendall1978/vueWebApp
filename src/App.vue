@@ -22,7 +22,8 @@
     
       <router-view></router-view>
     </div>
-    <footer id="sticky-footer" style="background-color: #023040; color: #36827c;">
+    <footer id="sticky-footer" style="background-color: #023040; 
+    color: #36827c;">
       <div class="container text-center">
         <small>Copyright &copy; Kendall Roberts</small>
       </div>
