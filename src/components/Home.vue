@@ -1,7 +1,6 @@
 <template>
 <div style="background-color: #fe7e41;">
-
-          
+  <!-- Rounded Circle Card -->
     <b-card no-body class="overflow-hidden" style="min-width: 85%;
       color: #511c0f; background-color: #fe7e41;  border: none; morgin-bottom: 3%;
       margin-left: 12%; z-index: 10; margin-top: 2rem">
@@ -22,8 +21,12 @@
     </b-card>
   <b-card deck style="background-color: #fe7e41; border: none;">
     <b-row>
-      <b-col sm="6" >
+      <b-col md="6" >
         <b-card-body>
+          <b-card-text style="padding-top: 2rem; color: #511c0f; font-size: 17pt;">
+            I built this website using Vue Js, just to try out some new things. Take a look
+            around the bugs might only bite a little. Also, enjoy the Star Wars quote below. 
+          </b-card-text>
           <b-card-text style="padding-top: 3rem; color: #511c0f; 
           font-size: 22pt;"><i>"No! Try not! Do or do not, there is no try"</i></b-card-text>
             <footer style="color: #02525b; font-size: 13pt;" class="blockquote-footer">

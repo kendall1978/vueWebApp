@@ -12,7 +12,7 @@
           <b-navbar-nav>
             <b-nav-item to="/">Home</b-nav-item>
             <b-nav-item to="/blog">Blog</b-nav-item>
-            <b-nav-item href="#">Projects</b-nav-item>
+            <b-nav-item to="/projects">Projects</b-nav-item>
           </b-navbar-nav>
 
       <!-- Right aligned nav items -->
