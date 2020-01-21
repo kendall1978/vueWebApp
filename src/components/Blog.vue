@@ -48,12 +48,14 @@
 
 
 
-    <b-card header="Quote" id="blogCard">
+    <b-card id="blogCard">
       <blockquote class="blockquote mb-0">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        <footer class="blockquote-footer">
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </footer>
+        <p>
+          Imposter syndrome is the worst enemy to anyone trying to be successful. Honestly 
+          I just don't have time for it. I know what I know, if I don't then suddenly
+          I want to. 
+        </p>
+        <b-card-text class="small text-muted">Last updated 01/17/2020 </b-card-text>
       </blockquote>
     </b-card>
 
@@ -72,15 +74,22 @@
 
 
 
-    <b-card img-src="https://marketingmatters.net/wp-content/uploads/2018/01/tech-focus-group.png" 
+    <b-card img-src="https://miro.medium.com/max/1024/1*OZyk5CyE1_tdaoq4ljMZrg.jpeg" 
     id="blogCard"
     img-alt="Image" img-top>
+      <h4>Thinking Critical, I think?</h4>
       <b-card-text>
-        This is a wider card with supporting text below as a natural lead-in to additional content.
-        This card has even longer content than the first.
+        After going through and reading several articles about what "Critical Thinking"
+        is I kept asking myself, "but what does this mean for me?". In my opinion,
+        critical thinking at least for developers is just the idea of being about to
+        come up with answers on your own and in your own creative way. What I mean by this
+        is not that you shouldn't ask questions but to just not ask the same questions.
+        I personally hate asking questions that I know I've already heard the answer before.
+        Just take what you know and figure out your own answer to the question. 
+        I'm not perfect at this but in the future I think i'll be thinking more critical on it.
       </b-card-text>
       <template v-slot:footer>
-        <small class="text-muted">Footer Text</small>
+        <small class="text-muted">1/21/2020</small>
       </template>
     </b-card>
   </b-card-group>
