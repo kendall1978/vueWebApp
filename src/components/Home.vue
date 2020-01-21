@@ -13,7 +13,7 @@
         <b-col sm="6">
           <b-card-body title="Kendall Roberts" >
             <b-card-text style="font-size: 14pt;">
-              Web-Developer, Student, and part-time dad joke comedian
+              Web-Developer, Student, and Part-Time Dad Joke Comedian
             </b-card-text>
           </b-card-body>
         </b-col>
