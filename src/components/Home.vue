@@ -7,7 +7,7 @@
       <b-row no-gutters style="border: none;
         background-color: #fe7e41; width: 85%; border-radius: 0px;">
         <b-col lg="6">
-          <b-card-img v-bind:src="mainMe" class="rounded-circle"
+          <b-card-img v-bind:src="mainMe" img-alt="@taryntaylor" class="rounded-circle"
             style="width: 80%; margin-left: 10%"></b-card-img>
         </b-col>
         <b-col sm="6">
@@ -24,12 +24,13 @@
       <b-col md="6" >
         <b-card-body>
           <b-card-text style="padding-top: 2rem; color: #511c0f; font-size: 17pt;">
-            I built this website using Vue Js, just to try out some new things. Take a look
-            around the bugs might only bite a little. Also, enjoy the Star Wars quote below. 
+            I built this website using Vue Js, just to try out some new technologies. Take a look
+            around. The bugs might only bite a little. Also, enjoy the Star Wars quote below. 
           </b-card-text>
           <b-card-text style="padding-top: 3rem; color: #511c0f; 
           font-size: 22pt;"><i>"No! Try not! Do or do not, there is no try"</i></b-card-text>
-            <footer style="color: #02525b; font-size: 13pt;" class="blockquote-footer">
+            <footer style="color: #02525b; font-size: 13pt;
+            text-indent: 5em;" class="blockquote-footer">
               Yoda 
             </footer>
         </b-card-body>
@@ -41,16 +42,9 @@
           margin: 25px 25px -webkit-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
         box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
-        border: solid #02525b 4px; border-radius: 4px;
-        "
-          fade
-          img-width="1024"
-           >
+        border: solid #02525b 4px; border-radius: 4px;">
           <b-carousel-slide 
-            v-bind:img-src="laidBack"
-          ></b-carousel-slide>
-          <b-carousel-slide
-            v-bind:img-src="jumpMe"
+            v-bind:img-src="laidBack" img-alt="@taryntaylor"
           ></b-carousel-slide>
           <b-carousel-slide
             v-bind:img-src="rocksMe"
@@ -64,22 +58,22 @@
       <div class="cardContent">
         <h4>My Education</h4>
         <b-card-text>
-          I've been interested in technology and code since I was in highschool. 
-          The first project I fell in love with was setting up Retropie on a raspberry pi.
+          I've been interested in technology and code since I was in high school. 
+          My first project-setting me up to love this field-was putting RetroPie on a Raspberry Pi.
           Ever since then I've loved this field. So I went to Ozarks Technical Community 
-          College to improve my knowledge. I am currently half-way through my degree with much more to learn.
+          College to improve my knowledge. I am currently half-way through my degree.
         </b-card-text>
       </div>
     </b-card>
     <b-card class="newBox">
       <div class="cardContent">
-        <h4>About Me</h4>
+        <h4>My Life</h4>
         <b-card-text>
-          Interesting things about me include the following. I played football and 
-          ran track in highschool. The boys and I went to state for track and feild 
-          several years in a row. I play the guitar, I feel as though music has a 
-          way of putting a person at ease and can improve your thoughts. Lastly, 
-          I am a proud owner of my blue heeler Koba.
+          I played football and ran track in high school, and the boys team and I 
+          went to state for track and field several years in a row. I play the guitar. 
+          Music can put people at ease and help improve their thoughts.I enjoy 
+          watching Marvel and Disney movies with my girlfriend Taryn. 
+          Taryn also gets full credit for the fantastic photos above.
         </b-card-text>
       </div>
     </b-card>
@@ -87,10 +81,10 @@
       <div class="cardContent">
         <h4>My Future</h4>
         <b-card-text>
-          Well first thing is finishing my associates degree in Computer
-          Information Science. After that I would love to land a front-end 
-          deveoper job. My long-term goal is to eventually become a full-stack 
-          deveoper and know the all there is to know about Web-site deveopment.
+          My primary focus is finishing my associates degree in Computer
+          Information Science. After that my goal is to land my first front-end 
+          developer job. My long-term goal is eventually to become a full-stack 
+          developer. At the end of the day I just want to learn all that I can about web development.
         </b-card-text>
       </div>
     </b-card>
@@ -257,5 +251,9 @@ body{
 
     .card{
       margin-bottom: 0;
+    }
+
+    .card p{
+      font-size: 18px;
     }
 </style>
