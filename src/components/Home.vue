@@ -1,7 +1,7 @@
 <template>
 <div style="background-color: #fe7e41;">
   <!-- Rounded Circle Card -->
-    <b-card no-body class="overflow-hidden" style="min-width: 85%;
+    <b-card no-body  style="min-width: 85%;
       color: #511c0f; background-color: #fe7e41;  border: none; morgin-bottom: 3%;
       margin-left: 12%; z-index: 10;">
       <b-row no-gutters style="border: none;
@@ -128,22 +128,39 @@ body{
     font-family: 'Poppins', sans-serif ;
 
 }
+
+
+
+
+
+
 /* Mix card styles */
 
 .newContain{
-  width: 80%;
-  margin-left: 10%;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px 10px;
+  align-content: flex-start;
+  min-height: 50vh;
   z-index: 1;
-  height: 25%;
 }
 
 .newContain .newBox{
-  background: #3b3b3b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transition: all 500ms ease-in-out;
   margin: 10px 15px;
   padding: 0 5px;
+  background: #3b3b3b;
   border: 1px solid rgb(255, 255, 255);
+  height: 100%;
+  min-height: 400px;
   z-index: 1;
-  height: 400px;
 }
 
 .newContain .newBox:before{
@@ -155,11 +172,11 @@ body{
   bottom: -2px;
   transform: skew(2deg, 2deg);
   z-index: -1;
-  background: #4b4b4b;
+  
 }
 
 .newContain .newBox:before{
-  background: linear-gradient(100deg, #02525b, #fea356);
+  background: linear-gradient(100deg, #0b4046, #bd038e);
 }
 
 .newContain .newBox:after{
@@ -170,14 +187,16 @@ body{
   width: 50%;
   height: 100%;
   background: rgba(190, 190, 190, 0.05);
+  
   pointer-events: none;
 }
 
-
-.newBox{
-  transition: all 500ms ease-in-out;
-}
 .cardContent{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
   padding: 15px;
   color: #000;
   transform: translateY(80px);

@@ -32,7 +32,7 @@
 
 
     <b-card title="Why I Like Vue.js For This Website" id="blogCard"
-    img-src="https://miro.medium.com/max/1200/1*-PlqbnwqjqJi_EVmrhmuDQ.jpeg" img-alt="Image" img-top>
+    v-bind:img-src="vue" img-alt="Image" img-top>
       <b-card-text>
         Vue was first introduced to me in a JavaScript class I took in 2019.
         However I was only introduced to the smallest portion of Vue, the one where
@@ -72,7 +72,7 @@
 
 
 
-    <b-card img-src="https://miro.medium.com/max/1024/1*OZyk5CyE1_tdaoq4ljMZrg.jpeg" 
+    <b-card v-bind:img-src="bulb" 
     id="blogCard"
     img-alt="Image" img-top>
       <h4>Thinking Critically, I Think?</h4>
@@ -95,12 +95,16 @@
 
 <script>
 import road from '../assets/road.jpg';
+import vue from '../assets/vue.jpg';
+import bulb from '../assets/bulb.jpeg';
 
 export default {
   name: 'blog',
   data(){
     return{
-      road
+      road,
+      vue,
+      bulb
     }
   }
 
