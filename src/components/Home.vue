@@ -53,7 +53,42 @@
       </b-col>
     </b-row>
   </b-card>
-  <b-card-group class="newContain">
+  <div class="contain">
+    <div class="box">
+      <div class="content">
+        <h4>My Education</h4>
+        <p>
+          I've been interested in technology and code since I was in high school. 
+          My first project-setting me up to love this field-was putting RetroPie on a Raspberry Pi.
+          Ever since then I've loved this field. So I went to Ozarks Technical Community 
+          College to improve my knowledge. I am currently half-way through my degree.
+        </p>
+      </div>
+    </div>
+    <div class="box">
+      <div class="content">
+        <h4>My Education</h4>
+        <p>
+          I've been interested in technology and code since I was in high school. 
+          My first project-setting me up to love this field-was putting RetroPie on a Raspberry Pi.
+          Ever since then I've loved this field. So I went to Ozarks Technical Community 
+          College to improve my knowledge. I am currently half-way through my degree.
+        </p>
+      </div>
+    </div>
+    <div class="box">
+      <div class="content">
+        <h4>My Education</h4>
+        <p>
+          I've been interested in technology and code since I was in high school. 
+          My first project-setting me up to love this field-was putting RetroPie on a Raspberry Pi.
+          Ever since then I've loved this field. So I went to Ozarks Technical Community 
+          College to improve my knowledge. I am currently half-way through my degree.
+        </p>
+      </div>
+    </div>
+  </div>
+  <b-card-group deck class="newContain">
     <b-card class="newBox">
       <div class="cardContent">
         <h4>My Education</h4>
@@ -116,17 +151,77 @@ export default {
 
 <style scoped>
 
-body{
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #060c21;
-    font-family: 'Poppins', sans-serif ;
+}
 
+.contain{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 7px solid red;
+}
+
+.contain .box{
+  width: 450px;
+  height: 475px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px auto;
+  padding: 5px;
+  transform: skew(2deg, 2deg);
+  background: linear-gradient(100deg, rgb(7, 247, 235), rgb(44, 6, 61));
+  border-radius: 2px;
+  transition: all 400ms ease-in-out;
+  
+}
+
+
+
+
+.box .content{
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background: rgba(49, 49, 49, 0.849);
+  color: #fff;
+  transform: skew(-2deg, -2deg);
+
+}
+
+.content h4{
+  top: 60px;
+  font-size: 3em;
+  color: rgba(165, 37, 37, 0.527);
+  transition: all 250ms ease-in;
+  padding: 20px 10px;
+}
+.content p{
+  font-size: 20px;
+  transition: all 300ms ease-in;
+  padding: 15px 20px;
+}
+
+.box:hover h4{
+  transform: translateX(45px);
+}
+.box:hover p{
+  transform: scale(1.009);
+}
+
+.box:hover{
+  box-shadow: 100px, 100px, 100px, 100px;
 }
 
 
@@ -136,34 +231,27 @@ body{
 
 /* Mix card styles */
 
-.newContain{
-  max-width: 100vw;
+/* .newContain{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  margin: 10px 10px;
-  align-content: flex-start;
-  min-height: 50vh;
-  z-index: 1;
+  border: 10px solid red;
+  align-content: center;
+  min-height: 450px;
 }
 
-.newContain .newBox{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+.newBox{
   transition: all 500ms ease-in-out;
-  margin: 10px 15px;
-  padding: 0 5px;
   background: #3b3b3b;
   border: 1px solid rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
   height: 100%;
-  min-height: 400px;
-  z-index: 1;
-}
+} */
 
-.newContain .newBox:before{
+/* .newContain .newBox:before{
   content: '';
   position: absolute;
   top: -2px;
@@ -189,7 +277,7 @@ body{
   background: rgba(190, 190, 190, 0.05);
   
   pointer-events: none;
-}
+} */
 
 .cardContent{
   top: 0;
