@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="aboveFooter">
-      <b-navbar toggleable="lg" type="dark" style="background-color: #023040">
-        <b-navbar-brand style="color: #36827c;" href="/">
+      <b-navbar toggleable="lg" type="dark" style="background-color: #424c55">
+        <b-navbar-brand style="color: #f5edf0;" href="/">
             Kendall Roberts
         </b-navbar-brand>
 

@@ -1,24 +1,34 @@
 <template>
-<div style="background-color: #fe7e41;">
+<div>
   <!-- Rounded Circle Card -->
-    <b-card no-body  style="min-width: 85%;
-      color: #511c0f; background-color: #fe7e41;  border: none; morgin-bottom: 3%;
-      margin-left: 12%; z-index: 10;">
-      <b-row no-gutters style="border: none;
-        background-color: #fe7e41; width: 85%; border-radius: 0px;">
-        <b-col lg="6">
-          <b-card-img v-bind:src="mainMe" img-alt="@taryntaylor" class="rounded-circle"
-            style="width: 80%; margin-left: 10%"></b-card-img>
-        </b-col>
-        <b-col sm="6">
+  <b-card-group class="roundContainer">
+    <b-row>
+      <b-col xl="6">
+        <b-card no-body class="text-center">
+          <b-card-img v-bind:src="mainMe" 
+          img-alt="@taryntaylor" 
+          class="rounded-circle"></b-card-img>
+        </b-card>
+      </b-col>
+      <b-col>
+        <b-card class="text-center" id="titleCard" >
           <b-card-body title="Kendall Roberts" >
-            <b-card-text style="font-size: 14pt;">
+            <b-card-text>
               Web-Developer, Student, and Part-Time Dad Joke Comedian
             </b-card-text>
           </b-card-body>
-        </b-col>
-      </b-row>
-    </b-card>
+        </b-card>
+        <b-card>
+          <i class="fab fa-github"></i>
+          <i class="fab fa-linkedin"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fas fa-envelope"></i>
+          <i class="fab fa-instagram"></i>
+          
+        </b-card>
+      </b-col>
+    </b-row>
+  </b-card-group>
   <b-card deck style="background-color: #fe7e41; border: none;">
     <b-row>
       <b-col md="6" >
@@ -53,76 +63,49 @@
       </b-col>
     </b-row>
   </b-card>
-  <div class="contain">
-    <div class="box">
-      <div class="content">
-        <h4>My Education</h4>
-        <p>
-          I've been interested in technology and code since I was in high school. 
-          My first project-setting me up to love this field-was putting RetroPie on a Raspberry Pi.
-          Ever since then I've loved this field. So I went to Ozarks Technical Community 
-          College to improve my knowledge. I am currently half-way through my degree.
-        </p>
-      </div>
-    </div>
-    <div class="box">
-      <div class="content">
-        <h4>My Education</h4>
-        <p>
-          I've been interested in technology and code since I was in high school. 
-          My first project-setting me up to love this field-was putting RetroPie on a Raspberry Pi.
-          Ever since then I've loved this field. So I went to Ozarks Technical Community 
-          College to improve my knowledge. I am currently half-way through my degree.
-        </p>
-      </div>
-    </div>
-    <div class="box">
-      <div class="content">
-        <h4>My Education</h4>
-        <p>
-          I've been interested in technology and code since I was in high school. 
-          My first project-setting me up to love this field-was putting RetroPie on a Raspberry Pi.
-          Ever since then I've loved this field. So I went to Ozarks Technical Community 
-          College to improve my knowledge. I am currently half-way through my degree.
-        </p>
-      </div>
-    </div>
-  </div>
-  <b-card-group deck class="newContain">
-    <b-card class="newBox">
-      <div class="cardContent">
-        <h4>My Education</h4>
-        <b-card-text>
-          I've been interested in technology and code since I was in high school. 
-          My first project-setting me up to love this field-was putting RetroPie on a Raspberry Pi.
-          Ever since then I've loved this field. So I went to Ozarks Technical Community 
-          College to improve my knowledge. I am currently half-way through my degree.
-        </b-card-text>
-      </div>
-    </b-card>
-    <b-card class="newBox">
-      <div class="cardContent">
-        <h4>My Life</h4>
-        <b-card-text>
-          I played football and ran track in high school, and the boys team and I 
-          went to state for track and field several years in a row. I play the guitar. 
-          Music can put people at ease and help improve their thoughts.I enjoy 
-          watching Marvel and Disney movies with my girlfriend Taryn. 
-          Taryn also gets full credit for the fantastic photos above.
-        </b-card-text>
-      </div>
-    </b-card>
-    <b-card class="newBox">
-      <div class="cardContent">
-        <h4>My Future</h4>
-        <b-card-text>
-          My primary focus is finishing my associates degree in Computer
-          Information Science. After that my goal is to land my first front-end 
-          developer job. My long-term goal is eventually to become a full-stack 
-          developer. At the end of the day I just want to learn all that I can about web development.
-        </b-card-text>
-      </div>
-    </b-card>
+  <b-card-group class="newContain">
+    <b-row>
+        <b-col>
+          <b-card class="newBox">
+            <div class="cardContent">
+              <h4>My Education</h4>
+              <b-card-text>
+                I've been interested in technology and code since I was in high school. 
+                My first project-setting me up to love this field-was putting RetroPie on a Raspberry Pi.
+                Ever since then I've loved this field. So I went to Ozarks Technical Community 
+                College to improve my knowledge. I am currently half-way through my degree.
+              </b-card-text>
+            </div>
+          </b-card>
+        </b-col>
+      <b-col>
+        <b-card class="newBox">
+          <div class="cardContent">
+            <h4>My Life</h4>
+            <b-card-text>
+              I played football and ran track in high school, and the boys team and I 
+              went to state for track and field several years in a row. I play the guitar. 
+              Music can put people at ease and help improve their thoughts.I enjoy 
+              watching Marvel and Disney movies with my girlfriend Taryn. 
+              Taryn also gets full credit for the fantastic photos above.
+            </b-card-text>
+          </div>
+        </b-card>
+      </b-col>
+      <b-col >
+        <b-card class="newBox">
+          <div class="cardContent">
+            <h4>My Future</h4>
+            <b-card-text>
+              My primary focus is finishing my associates degree in Computer
+              Information Science. After that my goal is to land my first front-end 
+              developer job. My long-term goal is eventually to become a full-stack 
+              developer. At the end of the day I just want to learn all that I can about web development.
+            </b-card-text>
+          </div>
+        </b-card>
+      </b-col>
+    </b-row>
   </b-card-group>
 </div>
 </template>
@@ -155,7 +138,67 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color:#351D2E;
+  background: #B7B7B7;
 
+}
+
+.fab, .fas{
+  font-size: 5em;
+  padding: 20px;
+  transition: all 300ms ease-in;
+
+
+}
+
+
+.fas:hover, .fab:hover{
+  color: rgba(42, 42, 42, 0.7);
+}
+
+.roundContainer{
+  width: 100%;
+  height: 80%;
+  background-color: #B7B7B7;
+
+  
+}
+
+
+
+.roundContainer .card{
+  width: 100%;
+  background-color: #B7B7B7;  
+  border: none; 
+  margin: 50px auto;
+  text-align: center;
+}
+
+.rounded-circle{
+  transition: all 350ms ease-in;
+  box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.5),
+  -10px -10px 12px 0 rgba(255, 255, 255, .9) ;
+  
+}
+
+#titleCard{
+  width: 80%;
+  border-radius: 20px;
+  padding: 20px 17px;
+  box-shadow: 8px 8px 12px 0 rgba(0, 0, 0, 0.5),
+  -8px -8px 12px 0 rgba(255, 255, 255, .9) ;
+}
+
+.rounded-circle:hover{
+  transform: translateY(-20px);
+  
+}
+
+
+
+.rounded-circle {
+  width: 80%; 
+  margin-left: 10%;
 }
 
 .contain{
@@ -165,7 +208,6 @@ export default {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  border: 7px solid red;
 }
 
 .contain .box{
@@ -176,10 +218,11 @@ export default {
   align-items: center;
   margin: 25px auto;
   padding: 5px;
-  transform: skew(2deg, 2deg);
   background: linear-gradient(100deg, rgb(7, 247, 235), rgb(44, 6, 61));
   border-radius: 2px;
   transition: all 400ms ease-in-out;
+  box-shadow: 8px 8px 12px 0 rgba(0, 0, 0, 0.5),
+  -8px -8px 12px 0 rgba(255, 255, 255, .9) ;
   
 }
 
@@ -194,16 +237,15 @@ export default {
   right: 0;
   bottom: 0;
   border-radius: 5px;
-  background: rgba(49, 49, 49, 0.849);
+  background: #d6d6d6;
   color: #fff;
-  transform: skew(-2deg, -2deg);
+  
 
 }
 
 .content h4{
   top: 60px;
   font-size: 3em;
-  color: rgba(165, 37, 37, 0.527);
   transition: all 250ms ease-in;
   padding: 20px 10px;
 }
@@ -212,13 +254,22 @@ export default {
   transition: all 300ms ease-in;
   padding: 15px 20px;
 }
+.content .fas{
+  opacity: 0;
+  transition: all 400ms ease-in;
+  transform: translateX(240px);
+  padding: 10px 50px;
+}
 
-.box:hover h4{
+.box:hover  .content h4{
   transform: translateX(45px);
 }
-.box:hover p{
-  transform: scale(1.009);
+
+.box:hover .fas{
+  transform: translateX(50px);
+  opacity: 1;
 }
+
 
 .box:hover{
   box-shadow: 100px, 100px, 100px, 100px;
@@ -231,41 +282,42 @@ export default {
 
 /* Mix card styles */
 
-/* .newContain{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  border: 10px solid red;
-  align-content: center;
-  min-height: 450px;
+.newContain{
+  width: 100%;
+  height: auto;
+  padding: 75px 25px;
+  
+  
 }
 
 .newBox{
-  transition: all 500ms ease-in-out;
-  background: #3b3b3b;
-  border: 1px solid rgb(255, 255, 255);
-  margin: 0;
-  padding: 0;
-  height: 100%;
-} */
+  width: 450px;
+  height: 475px;
+  margin: 50px 25px;
+  padding: 1.75px;
+  border-radius: 8px;
+  transition: all 400ms ease-in-out;
+  z-index: 1;
+ 
+} 
 
-/* .newContain .newBox:before{
+ .newContain .newBox:before{
   content: '';
   position: absolute;
   top: -2px;
   left: -2px;
   right: -2px;
   bottom: -2px;
-  transform: skew(2deg, 2deg);
+  transform: skew(1.7deg, 1.7deg);
+  padding: 5px;
+  border-radius: 8px;
+  background: linear-gradient(300deg, #313131de, rgb(105, 0, 74));
   z-index: -1;
+  box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.5),
+  -10px -10px 12px 0 rgba(255, 255, 255, .9) ;
   
 }
 
-.newContain .newBox:before{
-  background: linear-gradient(100deg, #0b4046, #bd038e);
-}
 
 .newContain .newBox:after{
   content: '';
@@ -275,39 +327,40 @@ export default {
   width: 50%;
   height: 100%;
   background: rgba(190, 190, 190, 0.05);
-  
+  z-index: 1;
   pointer-events: none;
-} */
+}
 
 .cardContent{
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-
-  padding: 15px;
+  height: 100%;
+  width: 100%;
+  padding: 15px 20px;
   color: #000;
-  transform: translateY(80px);
+  
 
 }
 
+.card-group .card{
+  text-align: center;
+}
+
 .newBox .cardContent p{
-  transition: all 250ms ease-in;
+  font-size: 1.25em;
+  padding: 10px 15px;
 }
 
 
 
 .newBox .cardContent h4{
-  position: absolute;
-  top: -60px;
-  font-size: 2em;
-  color: rgba(255, 255, 255, 0.527);
-  transition: 350ms;
+  font-size: 3em;
+  padding: 10px 5px;
+  transition: all 350ms ease-in;
 }
 
-.newBox:hover p{
-  transform: scale(1.03);
-}
 .newBox:hover h4{
   top: -40px;
 }
@@ -316,14 +369,6 @@ export default {
   transform: translateY(-10px);
 }
 
-    #homeCards .card:hover{
-      -webkit-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
-        box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75); 
-        transform: scale(1.07); 
-        z-index: 1;
-        
-    }
 
     .carousel-slide{
       transition-duration: 500ms;
@@ -338,27 +383,7 @@ export default {
       transition-timing-function: ease-in-out;
     }
 
-    .rounded-circle{
-      position: relative;
-      transition-duration: 500ms;
-      transition-property: transform, box-shadow, top;
-      border: solid #02525b 4px;
-      transition-timing-function: ease-in-out;
-      top: 25px;
 
-    }
-
-    .rounded-circle:hover{
-        -webkit-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
-        box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75); 
-        top: 10px;
-        
-    }
-
-    .card{
-      margin-bottom: 0;
-    }
 
     .card p{
       font-size: 18px;
