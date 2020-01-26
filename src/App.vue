@@ -2,8 +2,8 @@
   <div>
     <div class="aboveFooter">
       <b-navbar toggleable="lg" type="dark" style="background-color: #424c55">
-        <b-navbar-brand style="color: #f5edf0;" href="/">
-            Kendall Roberts
+        <b-navbar-brand style="color: #351D2E;" href="/">
+            <strong>Kendall Roberts</strong>
         </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -22,10 +22,19 @@
     
       <router-view></router-view>
     </div>
-    <footer id="sticky-footer" style="background-color: #023040; 
-    color: #36827c;">
+    <footer id="sticky-footer">
       <div class="container text-center">
-        <small>Copyright &copy; Kendall Roberts</small>
+        <h6><strong>Copyright &copy; Kendall Roberts</strong></h6>
+        <div class="icons">
+          <a href="https://github.com/kendall1978?tab=repositories">
+          <i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/kendall-roberts-1b8b3a171/">
+          <i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com/kendertsrondall">
+          <i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/kendall_roberts49/">
+          <i class="fab fa-instagram"></i></a>
+        </div>
       </div>
     </footer>
   </div>
@@ -44,23 +53,28 @@ export default {
 </script>
 
 <style>
+        
+.aboveFooter{
+  min-height: 100vh;
+  background-color: #fe7e41;
+}
 
-  html{
-    background-color: #fe7e41;
-  }
-  
-  .aboveFooter{
-    min-height: 100vh;
-    background-color: #fe7e41;
-  }
+#sticky-footer{
+  padding: 1rem 0 3rem 0;
+  background: #424c55;
+  color: #351D2E;
 
-    #sticky-footer{
-      padding: 1rem 0 3rem 0;
-    }
+}
 
-    #bear{
-        height: 35px;
-        width: auto;
-        padding-right: 10px;
-    }
+.icons a{
+  padding: 10px 10px;
+  font-size: 5rem;
+  color: #351D2E;
+  transition: all 200ms ease-in;
+}
+.icons a:hover{
+  color: rgba(251, 251, 251, 0.746);
+}
+
+
 </style>

@@ -19,40 +19,33 @@
           </b-card-body>
         </b-card>
         <b-card>
-          <i class="fab fa-github"></i>
-          <i class="fab fa-linkedin"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fas fa-envelope"></i>
-          <i class="fab fa-instagram"></i>
-          
+          <a href="https://github.com/kendall1978?tab=repositories"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/kendall-roberts-1b8b3a171/"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com/kendertsrondall"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/kendall_roberts49/"><i class="fab fa-instagram"></i></a>
         </b-card>
       </b-col>
     </b-row>
   </b-card-group>
-  <b-card deck style="background-color: #fe7e41; border: none;">
+  <b-card class="slidesCard">
     <b-row>
-      <b-col md="6" >
-        <b-card-body>
-          <b-card-text style="padding-top: 2rem; color: #511c0f; font-size: 17pt;">
-            I built this website using Vue Js, just to try out some new technologies. Take a look
-            around. The bugs might only bite a little. Also, enjoy the Star Wars quote below. 
-          </b-card-text>
-          <b-card-text style="padding-top: 3rem; color: #511c0f; 
-          font-size: 22pt;"><i>"No! Try not! Do or do not, there is no try"</i></b-card-text>
-            <footer style="color: #02525b; font-size: 13pt;
-            text-indent: 5em;" class="blockquote-footer">
-              Yoda 
-            </footer>
-        </b-card-body>
+      <b-col>
+        <div class="slidesTitle">
+          <b-card-body>
+            <b-card-text class="titleText">
+              I built this website using Vue Js, just to try out some new technologies. Take a look
+              around. The bugs might only bite a little. Also, enjoy the Star Wars quote below. 
+            </b-card-text>
+            <b-card-text class="quote"><i>"No! Try not! Do or do not, there is no try"</i></b-card-text>
+              <footer class="blockquote-footer quoteFoot">
+                Yoda 
+              </footer>
+          </b-card-body>
+        </div>
       </b-col>
-      <b-col lg="6">
+      <b-col xl="6">
         <b-carousel
-          id="carousel-fade"
-          style="text-shadow: 0px 0px 2px #000; 
-          margin: 25px 25px -webkit-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
-        box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
-        border: solid #02525b 4px; border-radius: 4px;">
+          id="carousel-fade">
           <b-carousel-slide 
             v-bind:img-src="laidBack" img-alt="@taryntaylor"
           ></b-carousel-slide>
@@ -63,50 +56,20 @@
       </b-col>
     </b-row>
   </b-card>
-  <b-card-group class="newContain">
-    <b-row>
+  <div class="newContain">
+      <div v-for="card in cardContent" :key="card.id">
         <b-col>
-          <b-card class="newBox">
+          <b-card align="left" class="newBox">
             <div class="cardContent">
-              <h4>My Education</h4>
+              <h4>{{card.title}}</h4>
               <b-card-text>
-                I've been interested in technology and code since I was in high school. 
-                My first project-setting me up to love this field-was putting RetroPie on a Raspberry Pi.
-                Ever since then I've loved this field. So I went to Ozarks Technical Community 
-                College to improve my knowledge. I am currently half-way through my degree.
+                {{card.content}}
               </b-card-text>
             </div>
           </b-card>
         </b-col>
-      <b-col>
-        <b-card class="newBox">
-          <div class="cardContent">
-            <h4>My Life</h4>
-            <b-card-text>
-              I played football and ran track in high school, and the boys team and I 
-              went to state for track and field several years in a row. I play the guitar. 
-              Music can put people at ease and help improve their thoughts.I enjoy 
-              watching Marvel and Disney movies with my girlfriend Taryn. 
-              Taryn also gets full credit for the fantastic photos above.
-            </b-card-text>
-          </div>
-        </b-card>
-      </b-col>
-      <b-col >
-        <b-card class="newBox">
-          <div class="cardContent">
-            <h4>My Future</h4>
-            <b-card-text>
-              My primary focus is finishing my associates degree in Computer
-              Information Science. After that my goal is to land my first front-end 
-              developer job. My long-term goal is eventually to become a full-stack 
-              developer. At the end of the day I just want to learn all that I can about web development.
-            </b-card-text>
-          </div>
-        </b-card>
-      </b-col>
-    </b-row>
-  </b-card-group>
+      </div>
+  </div>
 </div>
 </template>
 
@@ -123,7 +86,24 @@ export default {
         laidBack,
         mainMe,
         rocksMe,
-        jumpMe
+        jumpMe,
+        cardContent: [{
+          id: 1,
+          title: "My Education",
+          content: "I've been interested in technology and code since I was in high school. My first project-setting me up to love this field-was putting RetroPie on a Raspberry Pi. Ever since then I've loved this field. So I went to Ozarks Technical Community College to improve my knowledge. I am currently half-way through my degree."
+          },
+          {
+            id: 2,
+            title: "My Life",
+            content: "I played football and ran track in high school, and the boys team and I went to state for track and field several years in a row. I play the guitar. Music can put people at ease and help improve their thoughts.I enjoy watching Marvel and Disney movies with my girlfriend Taryn. Taryn also gets full credit for the fantastic photos above."
+          },
+          {
+            id: 3,
+            title: "My Future",
+            content: "My primary focus is finishing my associates degree in Computer Information Science. After that my goal is to land my first front-end developer job. My long-term goal is eventually to become a full-stack developer. At the end of the day I just want to learn all that I can about web development."
+          }
+          
+        ]
       }
   },
 
@@ -164,8 +144,6 @@ export default {
   
 }
 
-
-
 .roundContainer .card{
   width: 100%;
   background-color: #B7B7B7;  
@@ -183,10 +161,11 @@ export default {
 
 #titleCard{
   width: 80%;
-  border-radius: 20px;
+  border-radius: 10px;
+  border: none;
   padding: 20px 17px;
-  box-shadow: 8px 8px 12px 0 rgba(0, 0, 0, 0.5),
-  -8px -8px 12px 0 rgba(255, 255, 255, .9) ;
+  box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, .7),
+  -10px -10px 10px 0 rgba(255, 255, 255, .7) ;
 }
 
 .rounded-circle:hover{
@@ -200,152 +179,55 @@ export default {
   width: 80%; 
   margin-left: 10%;
 }
-
-.contain{
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.contain .box{
-  width: 450px;
-  height: 475px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 25px auto;
-  padding: 5px;
-  background: linear-gradient(100deg, rgb(7, 247, 235), rgb(44, 6, 61));
-  border-radius: 2px;
-  transition: all 400ms ease-in-out;
-  box-shadow: 8px 8px 12px 0 rgba(0, 0, 0, 0.5),
-  -8px -8px 12px 0 rgba(255, 255, 255, .9) ;
-  
-}
-
-
-
-
-.box .content{
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 5px;
-  background: #d6d6d6;
-  color: #fff;
-  
-
-}
-
-.content h4{
-  top: 60px;
-  font-size: 3em;
-  transition: all 250ms ease-in;
-  padding: 20px 10px;
-}
-.content p{
-  font-size: 20px;
-  transition: all 300ms ease-in;
-  padding: 15px 20px;
-}
-.content .fas{
-  opacity: 0;
-  transition: all 400ms ease-in;
-  transform: translateX(240px);
-  padding: 10px 50px;
-}
-
-.box:hover  .content h4{
-  transform: translateX(45px);
-}
-
-.box:hover .fas{
-  transform: translateX(50px);
-  opacity: 1;
-}
-
-
-.box:hover{
-  box-shadow: 100px, 100px, 100px, 100px;
-}
-
-
-
-
-
-
 /* Mix card styles */
 
 .newContain{
   width: 100%;
   height: auto;
-  padding: 75px 25px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 60px 0;
   
   
 }
 
 .newBox{
-  width: 450px;
-  height: 475px;
-  margin: 50px 25px;
-  padding: 1.75px;
-  border-radius: 8px;
+  padding: 1.75px .5px;
   transition: all 400ms ease-in-out;
   z-index: 1;
+  width: 450px;
+  height: 475px;
+  margin: 30px 20px;
  
 } 
 
- .newContain .newBox:before{
+ .newContain .newBox::before{
   content: '';
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  transform: skew(1.7deg, 1.7deg);
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
   padding: 5px;
-  border-radius: 8px;
-  background: linear-gradient(300deg, #313131de, rgb(105, 0, 74));
+  border: none;
+  border-radius: 1px;
+  transform: skew(1.7deg, 1.7deg);
+  background: linear-gradient(360deg, #1c10c5, rgb(104, 8, 75));
   z-index: -1;
   box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.5),
   -10px -10px 12px 0 rgba(255, 255, 255, .9) ;
   
 }
 
-
-.newContain .newBox:after{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: rgba(190, 190, 190, 0.05);
-  z-index: 1;
-  pointer-events: none;
-}
-
 .cardContent{
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   height: 100%;
   width: 100%;
   padding: 15px 20px;
-  color: #000;
+  border: 1px solid black; 
   
 
-}
-
-.card-group .card{
-  text-align: center;
 }
 
 .newBox .cardContent p{
@@ -353,16 +235,15 @@ export default {
   padding: 10px 15px;
 }
 
-
-
 .newBox .cardContent h4{
   font-size: 3em;
   padding: 10px 5px;
+  opacity: .8;
   transition: all 350ms ease-in;
 }
 
-.newBox:hover h4{
-  top: -40px;
+.newBox:hover .cardContent h4{
+  transform: translateX(20px);
 }
 
 .newBox:hover{
@@ -370,22 +251,46 @@ export default {
 }
 
 
-    .carousel-slide{
-      transition-duration: 500ms;
-      transition-timing-function: ease-in-out; 
-    }
+.slidesCard{
+  border:none;
+}
 
-    
+.slidesTitle{
+  width: 80%;
+  margin: 50px auto;
+  padding: 30px 20px;
+  box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.5),
+  -10px -10px 12px 0 rgba(255, 255, 255, .9) ;
+  border-radius: 8px;
 
-    #homeCards .card{
-      transition-duration: 500ms;
-      transition-property: box-shadow, transform;
-      transition-timing-function: ease-in-out;
-    }
+}
+
+.slidesTitle .titleText{
+  font-size: 25px;
+  padding: 5px 10px 40px 10px;
+}
+
+.slidesTitle .quote{
+  font-size: 35px;
+  padding: 40px 10px 40px 10px;
+}
+
+.quoteFoot{
+  padding: 0 70px;
+}
 
 
+#carousel-fade{
+  text-shadow: 0px 0px 2px #000; 
+  margin: 25px 25px;
+  box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.5),
+  -10px -10px 12px 0 rgba(255, 255, 255, .9) ;
+  border: none; 
+  border-radius: 8px;
+  transition: all 400ms ease-in; 
+}
 
-    .card p{
-      font-size: 18px;
-    }
+.card p{
+  font-size: 18px;
+}
 </style>

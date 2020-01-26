@@ -118,7 +118,7 @@ export default {
     font-size: 18px;
   }
   .card-columns{
-    padding: 2rem 0;
+    padding: 50px 0;
     column-gap: 1.5rem;
     margin-top: 1rem;
     margin-left: 6%;
@@ -132,8 +132,7 @@ export default {
     transition-property: box-shadow, background-color, transform;
     transition-timing-function: ease-in-out;
     border: none;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin: 1.5rem 1rem;
 
   }
 
@@ -141,14 +140,12 @@ export default {
 
 
   #blogCard:hover{
-        -webkit-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75);
-        box-shadow: -1px 10px 43px -12px rgba(0, 0, 0, 0.75); 
+        box-shadow: 10px 10px 14px 2px rgba(0, 0, 0, 0.75),
+        -10px -10px 14px 2px rgba(255, 255, 255, 0.75); 
         z-index: 1;  
         background-color: #02525b;
         color: #fea356;
         border: none;
-        transform: scale(1.01);
     }
 
 </style>
