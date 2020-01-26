@@ -212,7 +212,7 @@ export default {
   bottom: 0px;
   padding: 5px;
   border: none;
-  border-radius: 1px;
+  border-radius: 8px;
   transform: skew(1.7deg, 1.7deg);
   background: linear-gradient(360deg, #1c10c5, rgb(104, 8, 75));
   z-index: -1;
@@ -226,6 +226,7 @@ export default {
   width: 100%;
   padding: 15px 20px;
   border: 1px solid black; 
+  border-radius: 0 8px 0 8px;
   
 
 }
