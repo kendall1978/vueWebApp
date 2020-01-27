@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="aboveFooter">
-      <b-navbar toggleable="lg" type="dark" style="background-color: #424c55">
-        <b-navbar-brand style="color: #351D2E;" href="/">
+      <b-navbar toggleable="lg" type="dark" style="background-color: rgb(36, 37, 39);">
+        <b-navbar-brand href="/">
             <strong>Kendall Roberts</strong>
         </b-navbar-brand>
 
@@ -56,12 +56,12 @@ export default {
         
 .aboveFooter{
   min-height: 100vh;
-  background-color: #fe7e41;
+  background-color: rgb(36, 37, 39);
 }
 
 #sticky-footer{
   padding: 1rem 0 3rem 0;
-  background: #424c55;
+  background: rgb(131, 131, 131);
   color: #351D2E;
 
 }
@@ -73,7 +73,7 @@ export default {
   transition: all 200ms ease-in;
 }
 .icons a:hover{
-  color: rgba(251, 251, 251, 0.746);
+  color: rgba(10, 10, 10, 0.746);
 }
 
 

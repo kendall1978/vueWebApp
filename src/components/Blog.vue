@@ -1,6 +1,7 @@
 <template>
 <div>
   <b-card-group columns>
+    
     <b-card 
       title="Why Traveling Gives Me Motivation"
       v-bind:img-src="road"
@@ -18,14 +19,14 @@
         like I am ahead of them then I tend to feel terribly behind. Nonetheless 
         motivation is motivation, wherever it comes from. 
       </b-card-text>
-      <b-card-text class="small text-muted">Last updated 01/07/2020 </b-card-text>
+      <b-card-text class="small text">01/07/2020 </b-card-text>
     </b-card>
 
     <b-card text-variant="black" id="blogCard">
       <blockquote class="card-blockquote">
         <p>I like to think of adults more as resources. Resources of old reusable knowledge.</p>
         <footer>
-          <b-card-text class="small text-muted">Last updated 01/21/2020 </b-card-text>
+          <b-card-text class="small text">01/21/2020 </b-card-text>
         </footer>
       </blockquote>
     </b-card>
@@ -43,8 +44,10 @@
         I have much more to learn as far as web development goes, but as far as Vue goes,
         I will always keep it in my back pocket ready for other projects like this one.
       </b-card-text>
-      <b-card-text class="small text-muted">Last updated 01/08/2020 </b-card-text>
+      <b-card-text class="small text">01/08/2020 </b-card-text>
     </b-card>
+
+    
 
 
 
@@ -54,9 +57,11 @@
           Imposter syndrome is the worst enemy to anyone trying to be successful. Honestly 
           I just don't have time for it. I know what I know. If I don't, then suddenly I want to. 
         </p>
-        <b-card-text class="small text-muted">Last updated 01/17/2020 </b-card-text>
+        <b-card-text class="small text">01/17/2020 </b-card-text>
       </blockquote>
     </b-card>
+
+    
 
     <b-card id="blogCard">
       <b-card-title>Communication Matters</b-card-title>
@@ -67,7 +72,7 @@
         gotten me the answers I need. In some cases even, asking questions has gotten me answers 
         to questions that I would probably have in the future.
       </b-card-text>
-      <b-card-text class="small text-muted">Last updated 01/08/2020</b-card-text>
+      <b-card-text class="small text">01/08/2020</b-card-text>
     </b-card>
 
 
@@ -86,9 +91,35 @@
         I'm not perfect at this but in the future I think I'll be thinking more critical on it.
       </b-card-text>
       <template v-slot:footer>
-        <small class="text-muted">1/21/2020</small>
+        <small class="text">1/21/2020</small>
       </template>
     </b-card>
+
+
+    <b-card v-bind:img-src="code" 
+    id="blogCard"
+    img-alt="Image" img-top>
+      <h4>How Did I Know That I Wanted to Code?</h4>
+      <b-card-text>
+        In high school I was introduced to tech as a career. However, 
+        there are different places you can go in tech. When I first started 
+        college obviously, I didn’t know what I wanted to do. I put myself 
+        in a degree that would teach me to become a network administrator, 
+        because it was “techy”. On the first day of classes I knew it wasn’t 
+        right for me. I suppose I didn’t know as much as I just had a gut feeling. 
+        I decided about halfway through the semester that I would switch to a 
+        Computer Science Degree instead. I started taking some online tutorial 
+        courses in my free time and then by the time I started in my computer 
+        science degree I was hooked. My point in all this is that sometimes we 
+        follow career paths for the wrong reasons. I think a lot of people know 
+        what they want to do, they just don’t admit it to themselves before its 
+        too late and life hits. Admit it to yourself, for yourself.
+      </b-card-text>
+      <template v-slot:footer>
+        <small class="text">1/26/2020</small>
+      </template>
+    </b-card>
+
   </b-card-group>
 </div>
 </template>
@@ -97,6 +128,7 @@
 import road from '../assets/road.jpg';
 import vue from '../assets/vue.jpg';
 import bulb from '../assets/bulb.jpeg';
+import code from '../assets/code.jpg';
 
 export default {
   name: 'blog',
@@ -104,7 +136,8 @@ export default {
     return{
       road,
       vue,
-      bulb
+      bulb,
+      code
     }
   }
 
@@ -133,7 +166,12 @@ export default {
     transition-timing-function: ease-in-out;
     border: none;
     margin: 1.5rem 1rem;
+    background: rgb(131, 131, 131);
 
+  }
+
+  .text{
+    color:rgb(255, 255, 255);
   }
 
 
@@ -141,10 +179,8 @@ export default {
 
   #blogCard:hover{
         box-shadow: 10px 10px 14px 2px rgba(0, 0, 0, 0.75),
-        -10px -10px 14px 2px rgba(255, 255, 255, 0.75); 
+        -10px -10px 14px 0 rgba(78, 78, 78, 0.548); 
         z-index: 1;  
-        background-color: #02525b;
-        color: #fea356;
         border: none;
     }
 

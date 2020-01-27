@@ -118,8 +118,8 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color:#351D2E;
-  background: #B7B7B7;
+  color:rgb(131, 131, 131);
+  background: rgb(36, 37, 39);
 
 }
 
@@ -133,20 +133,20 @@ export default {
 
 
 .fas:hover, .fab:hover{
-  color: rgba(42, 42, 42, 0.7);
+  color: rgba(212, 212, 212, 0.7);
 }
 
 .roundContainer{
   width: 100%;
   height: 80%;
-  background-color: #B7B7B7;
+  background-color: rgb(36, 37, 39);
 
   
 }
 
 .roundContainer .card{
   width: 100%;
-  background-color: #B7B7B7;  
+  background-color: rgb(36, 37, 39);  
   border: none; 
   margin: 50px auto;
   text-align: center;
@@ -154,8 +154,7 @@ export default {
 
 .rounded-circle{
   transition: all 350ms ease-in;
-  box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.5),
-  -10px -10px 12px 0 rgba(255, 255, 255, .9) ;
+  box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.5) ;
   
 }
 
@@ -165,7 +164,7 @@ export default {
   border: none;
   padding: 20px 17px;
   box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, .7),
-  -10px -10px 10px 0 rgba(255, 255, 255, .7) ;
+  -10px -10px 14px 0 rgba(78, 78, 78, 0.548) ;
 }
 
 .rounded-circle:hover{
@@ -214,10 +213,10 @@ export default {
   border: none;
   border-radius: 8px;
   transform: skew(1.7deg, 1.7deg);
-  background: linear-gradient(360deg, #1c10c5, rgb(104, 8, 75));
+  background: linear-gradient(300deg, #E07A5F, #81B29A);
   z-index: -1;
   box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.5),
-  -10px -10px 12px 0 rgba(255, 255, 255, .9) ;
+  -10px -10px 14px 0 rgba(78, 78, 78, 0.548)  ;
   
 }
 
@@ -261,7 +260,7 @@ export default {
   margin: 50px auto;
   padding: 30px 20px;
   box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.5),
-  -10px -10px 12px 0 rgba(255, 255, 255, .9) ;
+  -10px -10px 14px 0 rgba(78, 78, 78, 0.548)  ;
   border-radius: 8px;
 
 }
@@ -284,8 +283,7 @@ export default {
 #carousel-fade{
   text-shadow: 0px 0px 2px #000; 
   margin: 25px 25px;
-  box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.5),
-  -10px -10px 12px 0 rgba(255, 255, 255, .9) ;
+  box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.5);
   border: none; 
   border-radius: 8px;
   transition: all 400ms ease-in; 
