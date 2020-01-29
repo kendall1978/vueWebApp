@@ -3,12 +3,13 @@
   <b-card-group columns>
     
     <b-card 
-      title="Why Traveling Gives Me Motivation"
+      
       v-bind:img-src="road"
       img-alt="Image"
       img-top
       id="blogCard"
     >
+      <h4>Why Traveling Gives Me Motivation</h4>
       <b-card-text>
         I am a competative person. I'm not sure if I mistake being competative 
         with simply just egar to prove myself. I've noticed that when I travel, 
@@ -25,9 +26,7 @@
     <b-card text-variant="black" id="blogCard">
       <blockquote class="card-blockquote">
         <p>I like to think of adults more as resources. Resources of old reusable knowledge.</p>
-        <footer>
           <b-card-text class="small text">01/21/2020 </b-card-text>
-        </footer>
       </blockquote>
     </b-card>
 
@@ -64,7 +63,7 @@
     
 
     <b-card id="blogCard">
-      <b-card-title>Communication Matters</b-card-title>
+      <h4>Communication Matters</h4>
       <b-card-text>
         Sometimes I think people underestimate the ability to simply make friends
         or acquaintances, especially in development. I can't tell you how many times
@@ -161,13 +160,17 @@ export default {
   }
 
   #blogCard{
-    transition-duration: 400ms;
-    transition-property: box-shadow, background-color, transform;
-    transition-timing-function: ease-in-out;
+    transition: all 400ms ease-in;
     border: none;
     margin: 1.5rem 1rem;
     background: rgb(131, 131, 131);
+    box-shadow: 10px 10px 14px 2px rgba(0, 0, 0, 0.75),
+        -10px -10px 14px 0 rgba(78, 78, 78, 0.548);
 
+  }
+
+  #blogCard h4{
+    transition: all 300ms ease-in;
   }
 
   .text{
@@ -177,11 +180,8 @@ export default {
 
 
 
-  #blogCard:hover{
-        box-shadow: 10px 10px 14px 2px rgba(0, 0, 0, 0.75),
-        -10px -10px 14px 0 rgba(78, 78, 78, 0.548); 
-        z-index: 1;  
-        border: none;
+  #blogCard:hover h4{
+      transform: translateX(10px);
     }
 
 </style>

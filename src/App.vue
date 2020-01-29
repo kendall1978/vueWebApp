@@ -2,7 +2,7 @@
   <div>
     <div class="aboveFooter">
       <b-navbar toggleable="lg" type="dark" style="background-color: rgb(36, 37, 39);">
-        <b-navbar-brand href="/">
+        <b-navbar-brand style="color: rgb(131, 131, 131)" href="/">
             <strong>Kendall Roberts</strong>
         </b-navbar-brand>
 
@@ -24,7 +24,7 @@
     </div>
     <footer id="sticky-footer">
       <div class="container text-center">
-        <h6><strong>Copyright &copy; Kendall Roberts</strong></h6>
+        <h6><strong>&copy; Kendall Roberts</strong></h6>
         <div class="icons">
           <a href="https://github.com/kendall1978?tab=repositories">
           <i class="fab fa-github"></i></a>
@@ -62,18 +62,18 @@ export default {
 #sticky-footer{
   padding: 1rem 0 3rem 0;
   background: rgb(131, 131, 131);
-  color: #351D2E;
+  color: rgb(36, 37, 39);
 
 }
 
 .icons a{
   padding: 10px 10px;
   font-size: 5rem;
-  color: #351D2E;
+  color: rgb(36, 37, 39);
   transition: all 200ms ease-in;
 }
 .icons a:hover{
-  color: rgba(10, 10, 10, 0.746);
+  color: #E07A5F;
 }
 
 

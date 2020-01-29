@@ -10,14 +10,15 @@
           class="rounded-circle"></b-card-img>
         </b-card>
       </b-col>
+      <!-- Title Card -->
       <b-col>
         <b-card class="text-center" id="titleCard" >
-          <b-card-body title="Kendall Roberts" >
-            <b-card-text>
+          <h4>Kendall Roberts</h4>
+            <b-card-text style="background-color: rgb(131,131,131);">
               Web-Developer, Student, and Part-Time Dad Joke Comedian
             </b-card-text>
-          </b-card-body>
         </b-card>
+        <!-- Font awesome links -->
         <b-card>
           <a href="https://github.com/kendall1978?tab=repositories"><i class="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/kendall-roberts-1b8b3a171/"><i class="fab fa-linkedin"></i></a>
@@ -27,35 +28,16 @@
       </b-col>
     </b-row>
   </b-card-group>
+  <!-- Website description -->
   <b-card class="slidesCard">
-    <b-row>
-      <b-col>
-        <div class="slidesTitle">
-          <b-card-body>
-            <b-card-text class="titleText">
-              I built this website using Vue Js, just to try out some new technologies. Take a look
-              around. The bugs might only bite a little. Also, enjoy the Star Wars quote below. 
-            </b-card-text>
-            <b-card-text class="quote"><i>"No! Try not! Do or do not, there is no try"</i></b-card-text>
-              <footer class="blockquote-footer quoteFoot">
-                Yoda 
-              </footer>
-          </b-card-body>
-        </div>
-      </b-col>
-      <b-col xl="6">
-        <b-carousel
-          id="carousel-fade">
-          <b-carousel-slide 
-            v-bind:img-src="laidBack" img-alt="@taryntaylor"
-          ></b-carousel-slide>
-          <b-carousel-slide
-            v-bind:img-src="rocksMe"
-          ></b-carousel-slide>
-        </b-carousel>
-      </b-col>
-    </b-row>
+    <div class="slidesTitle">
+      <b-card-text class="titleText">
+        I built this website using Vue Js, just to try out some new technologies and practice some of my skills.
+        Check out my projects page to see what else I'm working on. 
+      </b-card-text>
+    </div> 
   </b-card>
+  <!-- for loop for my small amount of json -->
   <div class="newContain">
       <div v-for="card in cardContent" :key="card.id">
         <b-col>
@@ -74,6 +56,7 @@
 </template>
 
 <script>
+// Importing my images
 import laidBack from '../assets/laidBack.jpg';
 import mainMe from '../assets/mainMe.jpg';
 import rocksMe from '../assets/rocksMe.jpg';
@@ -82,6 +65,7 @@ import jumpMe from '../assets/jumpMe.jpg';
 export default {
   name: 'home',
   data(){
+    // Returning my images to be usable as well as laying out my json.
       return{
         laidBack,
         mainMe,
@@ -118,28 +102,32 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color:rgb(131, 131, 131);
+  color:rgb(36, 37, 39);
   background: rgb(36, 37, 39);
 
 }
 
+/* Font awesome icons */
 .fab, .fas{
   font-size: 5em;
   padding: 20px;
   transition: all 300ms ease-in;
+  color: rgb(131, 131, 131);
 
 
 }
 
 
 .fas:hover, .fab:hover{
-  color: rgba(212, 212, 212, 0.7);
+  color: #E07A5F;
 }
+
+/* Rounded card properties */
 
 .roundContainer{
   width: 100%;
   height: 80%;
-  background-color: rgb(36, 37, 39);
+  background-color: rgb(131, 131, 131);
 
   
 }
@@ -158,6 +146,9 @@ export default {
   
 }
 
+/* title card next to or below round card */
+
+
 #titleCard{
   width: 80%;
   border-radius: 10px;
@@ -165,6 +156,12 @@ export default {
   padding: 20px 17px;
   box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, .7),
   -10px -10px 14px 0 rgba(78, 78, 78, 0.548) ;
+  background: rgb(131, 131, 131);
+  
+}
+#titleCard h4{
+  color:rgb(36, 37, 39);
+  background: rgb(131, 131, 131);
 }
 
 .rounded-circle:hover{
@@ -178,7 +175,7 @@ export default {
   width: 80%; 
   margin-left: 10%;
 }
-/* Mix card styles */
+/* Experiments with new card styles */
 
 .newContain{
   width: 100%;
@@ -201,6 +198,8 @@ export default {
   margin: 30px 20px;
  
 } 
+
+
 
  .newContain .newBox::before{
   content: '';
@@ -226,6 +225,7 @@ export default {
   padding: 15px 20px;
   border: 1px solid black; 
   border-radius: 0 8px 0 8px;
+  background: rgb(131, 131, 131);
   
 
 }
@@ -233,6 +233,8 @@ export default {
 .newBox .cardContent p{
   font-size: 1.25em;
   padding: 10px 15px;
+  color: rgb(36, 37, 39);
+  background: rgb(131, 131, 131); 
 }
 
 .newBox .cardContent h4{
@@ -240,6 +242,8 @@ export default {
   padding: 10px 5px;
   opacity: .8;
   transition: all 350ms ease-in;
+  color: rgb(36, 37, 39);
+  background: rgb(131, 131, 131); 
 }
 
 .newBox:hover .cardContent h4{
@@ -248,6 +252,41 @@ export default {
 
 .newBox:hover{
   transform: translateY(-10px);
+}
+
+@media only screen and (max-width: 550px) {
+  .newBox{
+    width:350px;
+    height: 375px;
+    margin: 30px 20px;
+  }
+  
+  .newBox .cardContent p {
+    font-size: .95em;
+  }
+  .newBox .cardContent h4 {
+    font-size: 2em;
+  }
+
+  .newBox:hover{
+    transform: none;
+  }
+  .newBox:hover .cardContent h4{
+    transform: none;
+  }
+}
+
+@media only screen and (max-width: 400px){
+  .newBox{
+    width: 300px;
+    height: 325px;
+  }
+  .newBox .cardContent p {
+    font-size: .85em;
+  }
+  .newBox .cardContent h4 {
+    font-size: 1.75em;
+  }
 }
 
 
@@ -262,32 +301,16 @@ export default {
   box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.5),
   -10px -10px 14px 0 rgba(78, 78, 78, 0.548)  ;
   border-radius: 8px;
+  background: rgb(131, 131, 131);
 
 }
 
 .slidesTitle .titleText{
   font-size: 25px;
   padding: 5px 10px 40px 10px;
+  background: rgb(131, 131, 131);
 }
 
-.slidesTitle .quote{
-  font-size: 35px;
-  padding: 40px 10px 40px 10px;
-}
-
-.quoteFoot{
-  padding: 0 70px;
-}
-
-
-#carousel-fade{
-  text-shadow: 0px 0px 2px #000; 
-  margin: 25px 25px;
-  box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.5);
-  border: none; 
-  border-radius: 8px;
-  transition: all 400ms ease-in; 
-}
 
 .card p{
   font-size: 18px;
