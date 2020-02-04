@@ -53,7 +53,13 @@ export default {
 </script>
 
 <style>
-        
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans|Poppins&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
 .aboveFooter{
   min-height: 100vh;
   background-color: rgb(36, 37, 39);
