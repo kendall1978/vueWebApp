@@ -28,15 +28,6 @@
       </b-col>
     </b-row>
   </b-card-group>
-  <!-- Website description -->
-  <b-card class="slidesCard">
-    <div class="slidesTitle">
-      <b-card-text class="titleText">
-        I built this website using Vue Js, just to try out some new technologies and practice some of my skills.
-        Check out my projects page to see what else I'm working on. 
-      </b-card-text>
-    </div> 
-  </b-card>
   <!-- for loop for my small amount of json -->
   <div class="newContain">
       <div v-for="card in cardContent" :key="card.id">
@@ -223,7 +214,7 @@ export default {
   height: 100%;
   width: 100%;
   padding: 15px 20px;
-  border: 1px solid black; 
+  
   border-radius: 0 8px 0 8px;
   background: rgb(131, 131, 131);
   
@@ -290,26 +281,7 @@ export default {
 }
 
 
-.slidesCard{
-  border:none;
-}
 
-.slidesTitle{
-  width: 80%;
-  margin: 50px auto;
-  padding: 30px 20px;
-  box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.5),
-  -10px -10px 14px 0 rgba(78, 78, 78, 0.548)  ;
-  border-radius: 8px;
-  background: rgb(131, 131, 131);
-
-}
-
-.slidesTitle .titleText{
-  font-size: 25px;
-  padding: 5px 10px 40px 10px;
-  background: rgb(131, 131, 131);
-}
 
 
 .card p{

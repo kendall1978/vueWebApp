@@ -3,7 +3,6 @@ import VueRouter from 'vue-router';
 import Home from './components/Home.vue';
 import Blog from './components/Blog.vue';
 import project from './components/projects/projects.vue';
-import apiExample from './components/projects/apiExample.vue';
 
 Vue.use(VueRouter);
 
@@ -21,10 +20,6 @@ const router = new VueRouter({
         {
             path: '/projects',
             component: project
-        },
-        {
-            path: '/apiExample',
-            component: apiExample
         }
     ]
 });

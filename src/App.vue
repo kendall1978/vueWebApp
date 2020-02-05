@@ -1,19 +1,29 @@
 <template>
   <div>
     <div class="aboveFooter">
-        <!-- <div class="pageMenu" id="nav">
+      <b-navbar class="pageMenu">
+        <b-navbar-brand style="color: rgb(131, 131, 131)" href="/">
+            <h1>Kendall Roberts</h1>
+        </b-navbar-brand>
+        <div class="pageMenu" id="nav">
           <div class="banner">
-            <img :src="rocksMe">
+            <img :src="jumpMe">
           </div>
           <div class="screenNav">
             <ul>
-              <li><a data-text="Home">Home</a></li>
-              <li><a data-text="Blog"> Blog</a></li>
+              <li v-on:click="navToggle"><router-link to="/" data-text="Home">Home</router-link></li>
+              <li v-on:click="navToggle"><router-link to="/blog" data-text="Blog">Blog</router-link></li>
             </ul>
           </div>
-          <span class='menuIcon' id="toggle" v-on:click="navToggle"><i class="fas fa-bars"></i></span>
-        </div> -->
-      <b-navbar toggleable="lg" type="dark" style="background-color: rgb(36, 37, 39);">
+            <span class='menuIcon' id="toggle" v-on:click="navToggle">
+              <i class="fas fa-bars"></i>
+            </span>
+        </div>
+      </b-navbar>
+
+
+      
+      <!-- <b-navbar toggleable="lg" type="dark" style="background-color: rgb(36, 37, 39);">
         <b-navbar-brand style="color: rgb(131, 131, 131)" href="/">
             <strong>Kendall Roberts</strong>
         </b-navbar-brand>
@@ -24,15 +34,12 @@
           <b-navbar-nav>
             <b-nav-item to="/">Home</b-nav-item>
             <b-nav-item to="/blog">Blog</b-nav-item>
-             <!--<b-nav-item to="/projects">Projects</b-nav-item> -->
+             <b-nav-item to="/projects">Projects</b-nav-item> 
           </b-navbar-nav>
-
-       Right aligned nav items 
- 
         </b-collapse>
-      </b-navbar>
+      </b-navbar> -->
     
-      <router-view></router-view> 
+      <router-view></router-view>  
     </div>
     <footer id="sticky-footer">
       <div class="container text-center">
@@ -53,16 +60,17 @@
 </template>
 
 <script>
-import rocksMe from "./assets/rocksMe.jpg";
+import jumpMe from "./assets/jumpMe2.jpg";
+
 
 export default {
   name: 'app',
   data(){
     return{
-      rocksMe
+      jumpMe
     }
   },
-  methods: {
+    methods: {
     navToggle: function(){
       var nav = document.getElementById("nav");
       var toggle = document.getElementById("toggle");
@@ -71,15 +79,16 @@ export default {
       
     }
   }
+  
 }
 </script>
 
 <style>
 
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans|Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Rock+Salt&display=swap');
 
 *{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .aboveFooter{
@@ -97,7 +106,9 @@ export default {
   justify-content: center;
   align-items: center;
   background: rgb(36, 37, 39);
-  transition: 500ms;
+  
+  transition: all 500ms;
+  z-index: 10;
 
 }
 
@@ -161,21 +172,21 @@ export default {
 
 .pageMenu .screenNav ul li:hover:before{
   transition: all 500ms ease-in-out;
-  transform: scaley(1);
+  transform: scaleY(1);
   transform-origin: top;
 }
 
 .pageMenu .screenNav ul li a{
   position: relative;
-  color: aqua;
+  color: #81B29A;
   text-decoration: none;
   font-size: 4em;
-  font-weight: 700;
+  font-weight: 550;
   line-height: 1em;
   padding-top: 12px;
   display: inline-block;
   text-transform: uppercase;
-  transition: 0.5s ease-in-out;
+  transition: 450ms ease-in;
 
 }
 
@@ -195,16 +206,17 @@ export default {
   
 }
 
-.menuIcon{
+#toggle.menuIcon{
   position: fixed;
   top: 20px;
   right: 20px;
   width: 60px;
   height: 60px;
-  background: rgb(36, 37, 39) ;
+  background:transparent;
   background-size: 40px;
   cursor: pointer;
-  background-repeat: no-repeat;
+  
+
   
 
 }
@@ -216,6 +228,13 @@ export default {
   font-size: 4em;
   color:#E07A5F;
 }
+
+@media screen and (max-width: 1000px){
+  .pageMenu .banner{
+    display: none;
+  }
+}
+
 
 
 
@@ -234,6 +253,18 @@ export default {
 }
 .icons a:hover{
   color: #E07A5F;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-brand h1{
+    font-size: 1em;
+  }
+  .menuIcon .fas{
+    font-size: 3em;
+  }
+}
+.navbar-brand{
+  font-family: 'Rock Salt', cursive;
 }
 
 
