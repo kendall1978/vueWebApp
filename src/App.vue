@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="aboveFooter">
-      <b-navbar class="pageMenu">
+      <b-navbar>
         <b-navbar-brand style="color: rgb(131, 131, 131)" href="/">
             <h1>Kendall Roberts</h1>
         </b-navbar-brand>
