@@ -1,19 +1,19 @@
 <template>
   <div>
     <div class="aboveFooter">
-      <div class="pageMenu" id="nav">
-        <div class="banner">
-          <img :src="rocksMe">
-        </div>
-        <div class="screenNav">
-          <ul>
-            <li><a data-text="Home">Home</a></li>
-            <li><a data-text="Blog"> Blog</a></li>
-          </ul>
-        </div>
-        <span class='menuIcon' id="toggle" v-on:click="navToggle"><i class="fas fa-bars"></i></span>
-      </div>
-      <!-- <b-navbar toggleable="lg" type="dark" style="background-color: rgb(36, 37, 39);">
+        <!-- <div class="pageMenu" id="nav">
+          <div class="banner">
+            <img :src="rocksMe">
+          </div>
+          <div class="screenNav">
+            <ul>
+              <li><a data-text="Home">Home</a></li>
+              <li><a data-text="Blog"> Blog</a></li>
+            </ul>
+          </div>
+          <span class='menuIcon' id="toggle" v-on:click="navToggle"><i class="fas fa-bars"></i></span>
+        </div> -->
+      <b-navbar toggleable="lg" type="dark" style="background-color: rgb(36, 37, 39);">
         <b-navbar-brand style="color: rgb(131, 131, 131)" href="/">
             <strong>Kendall Roberts</strong>
         </b-navbar-brand>
@@ -24,7 +24,7 @@
           <b-navbar-nav>
             <b-nav-item to="/">Home</b-nav-item>
             <b-nav-item to="/blog">Blog</b-nav-item>
-             <b-nav-item to="/projects">Projects</b-nav-item> 
+             <!--<b-nav-item to="/projects">Projects</b-nav-item> -->
           </b-navbar-nav>
 
        Right aligned nav items 
@@ -32,9 +32,9 @@
         </b-collapse>
       </b-navbar>
     
-      <router-view></router-view> -->
+      <router-view></router-view> 
     </div>
-    <!-- <footer id="sticky-footer">
+    <footer id="sticky-footer">
       <div class="container text-center">
         <h6><strong>&copy; Kendall Roberts</strong></h6>
         <div class="icons">
@@ -48,7 +48,7 @@
           <i class="fab fa-instagram"></i></a>
         </div>
       </div>
-    </footer> -->
+    </footer>
   </div>
 </template>
 
@@ -67,6 +67,7 @@ export default {
       var nav = document.getElementById("nav");
       var toggle = document.getElementById("toggle");
       nav.classList.toggle('active');
+      toggle.classList.toggle('active');
       
     }
   }
@@ -204,6 +205,7 @@ export default {
   background-size: 40px;
   cursor: pointer;
   background-repeat: no-repeat;
+  
 
 }
 .menuIcon .fas{
