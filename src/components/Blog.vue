@@ -161,7 +161,7 @@ export default {
   }
 
   #blogCard{
-    transition: all 400ms ease-in;
+    transition: all 300ms ease-in;
     border: none;
     margin: 1.5rem 0;
     background: rgb(131, 131, 131);
@@ -170,9 +170,6 @@ export default {
 
   }
 
-  #blogCard h4{
-    transition: all 300ms ease-in;
-  }
 
   .text{
     color:rgb(255, 255, 255);
@@ -181,8 +178,8 @@ export default {
 
 
 
-  #blogCard:hover h4{
-      transform: translateX(10px);
+  #blogCard:hover{
+      transform: scale(1.02);
     }
 
 
@@ -191,12 +188,18 @@ export default {
   .card-columns{
     column-count: 2;
   }
+
+  
   
 }
 
 @media screen and (max-width: 650px) {
   .card-columns{
     column-count: 1;
+  }
+
+  #blogCard:hover{
+    transform: scale(1);
   }
 }
 

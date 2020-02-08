@@ -107,13 +107,13 @@ export default {
   align-items: center;
   background: rgb(36, 37, 39);
   
-  transition: all 500ms;
+  transition: all 475ms ease-out;
   z-index: 10;
 
 }
 
 .pageMenu.active{
-  top: 0;
+  transform: translateY(100%);
 }
 
 .pageMenu .banner{

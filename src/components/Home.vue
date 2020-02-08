@@ -70,7 +70,7 @@ export default {
           {
             id: 2,
             title: "My Life",
-            content: "I played football and ran track in high school. The boys team and I went to state for track and field several years in a row. I play the guitar. Music can put people at ease and help improve their thoughts.I enjoy watching Marvel and Disney movies with my girlfriend Taryn. Taryn also gets full credit for the fantastic photos above."
+            content: "I played football and ran track in high school. The boys team and I went to state for track and field several years in a row. I play the guitar. Music can put people at ease and help improve their thoughts. I enjoy watching Marvel and Disney movies with my girlfriend Taryn. Taryn also gets full credit for the fantastic photos above."
           },
           {
             id: 3,
@@ -245,6 +245,20 @@ export default {
   transform: translateY(-10px);
 }
 
+@media only screen and (max-width: 800px){
+   .newBox:hover{
+    transform: none;
+  }
+  .newBox:hover .cardContent h4{
+    transform: none;
+  }
+
+  .rounded-circle:hover{
+  transform: none;
+  
+}
+}
+
 @media only screen and (max-width: 550px) {
   .newBox{
     width:350px;
@@ -259,12 +273,7 @@ export default {
     font-size: 2em;
   }
 
-  .newBox:hover{
-    transform: none;
-  }
-  .newBox:hover .cardContent h4{
-    transform: none;
-  }
+ 
 }
 
 @media only screen and (max-width: 400px){
