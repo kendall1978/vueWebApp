@@ -107,8 +107,8 @@
         because it was “techy”. On the first day of classes I knew it wasn’t 
         right for me. I suppose I didn’t know as much as I just had a gut feeling. 
         I decided about halfway through the semester that I would switch to a 
-        Computer Science Degree instead. I started taking some online tutorial 
-        courses in my free time and then by the time I started in my computer 
+        Computer Science Degree instead. I started taking some online tutorial's 
+        in my free time and then by the time I started in my computer 
         science degree I was hooked. My point in all this is that sometimes we 
         follow career paths for the wrong reasons. I think a lot of people know 
         what they want to do, they just don’t admit it to themselves before its 
@@ -148,13 +148,14 @@ export default {
 
   .card p{
     font-size: 18px;
+    line-height: 1.6em;
   }
   .card-columns{
     padding: 50px 0;
-    column-gap: 1.5rem;
+    column-gap: 40px;
     margin-top: 1rem;
-    margin-left: 6%;
-    width: 88%;
+    margin-left: 5%;
+    width: 90%;
     padding-bottom: 35px;
 
   }
@@ -162,7 +163,7 @@ export default {
   #blogCard{
     transition: all 400ms ease-in;
     border: none;
-    margin: 1.5rem 1rem;
+    margin: 1.5rem 0;
     background: rgb(131, 131, 131);
     box-shadow: 10px 10px 14px 2px rgba(0, 0, 0, 0.75),
         -10px -10px 14px 0 rgba(78, 78, 78, 0.548);
@@ -184,4 +185,20 @@ export default {
       transform: translateX(10px);
     }
 
+
+@media screen and (max-width: 1024px){
+
+  .card-columns{
+    column-count: 2;
+  }
+  
+}
+
+@media screen and (max-width: 650px) {
+  .card-columns{
+    column-count: 1;
+  }
+}
+
 </style>
+
