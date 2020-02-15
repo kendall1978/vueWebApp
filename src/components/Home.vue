@@ -53,6 +53,7 @@ import mainMe from '../assets/mainMe.jpg';
 import rocksMe from '../assets/rocksMe.jpg';
 import jumpMe from '../assets/jumpMe.jpg';
 
+
 export default {
   name: 'home',
   data(){

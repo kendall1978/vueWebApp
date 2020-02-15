@@ -257,7 +257,7 @@ export default {
 
 @media screen and (max-width: 600px) {
   .navbar-brand h1{
-    font-size: 1em;
+    font-size: 1.5em;
   }
   .menuIcon .fas{
     font-size: 3em;
