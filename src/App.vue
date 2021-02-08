@@ -72,11 +72,10 @@ export default {
   },
     methods: {
     navToggle: function(){
-      var nav = document.getElementById("nav");
-      var toggle = document.getElementById("toggle");
+      const nav = document.getElementById("nav");
+      const toggle = document.getElementById("toggle");
       nav.classList.toggle('active');
       toggle.classList.toggle('active');
-      
     }
   }
   
