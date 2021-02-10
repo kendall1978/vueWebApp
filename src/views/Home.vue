@@ -5,8 +5,7 @@
     <b-row>
       <b-col xl="6">
         <b-card no-body class="text-center">
-          <b-card-img v-bind:src="mainMe" 
-          img-alt="@taryntaylor" 
+          <b-card-img v-bind:src="mainMe"  
           class="rounded-circle"></b-card-img>
         </b-card>
       </b-col>
@@ -48,10 +47,8 @@
 
 <script>
 // Importing my images
-import laidBack from '../assets/laidBack.jpg';
 import mainMe from '../assets/mainMe.jpg';
-import rocksMe from '../assets/rocksMe.jpg';
-import jumpMe from '../assets/jumpMe.jpg';
+
 
 
 export default {
@@ -59,10 +56,7 @@ export default {
   data(){
     // Returning my images to be usable as well as laying out my json.
       return{
-        laidBack,
         mainMe,
-        rocksMe,
-        jumpMe,
         cardContent: [{
           id: 1,
           title: "My Education",

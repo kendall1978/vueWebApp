@@ -1,13 +1,16 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Home from './components/Home.vue';
-import Blog from './components/Blog.vue';
-import project from './components/projects/projects.vue';
+import Router from 'vue-router';
+import Home from './views/Home.vue';
+import Blog from './views/Blog.vue';
+import Login from './views/Login.vue';
+import Admin from './views/Admin.vue';
 
-Vue.use(VueRouter);
+import Store from '@/store'
+
+Vue.use(Router);
 
 
-const router = new VueRouter({
+const router = new Router({
     routes: [
         {
             path: '/',
@@ -18,10 +21,27 @@ const router = new VueRouter({
             component: Blog
         },
         {
-            path: '/projects',
-            component: project
+            path: '/login',
+            component: Login
+        },
+        {
+            path: '/admin',
+            component: Admin,
+            meta: {
+                auth: true
+            }
         }
     ]
 });
+
+router.beforeEach((to, from, next) => {
+    if(to.meta.auth && !Store.state.user){
+        next({
+            path: '/'
+        })
+    }else {
+        next()
+    }
+})
 
 export default router

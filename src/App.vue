@@ -1,69 +1,25 @@
 <template>
   <div>
     <div class="aboveFooter">
-      <b-navbar>
-        <b-navbar-brand style="color: rgb(131, 131, 131)" href="/">
-            <h1>Kendall Roberts</h1>
-        </b-navbar-brand>
-        <div class="pageMenu" id="nav">
-          <div class="banner">
-            <img :src="jumpMe">
-          </div>
-          <div class="screenNav">
-            <ul>
-              <li v-on:click="navToggle"><router-link to="/" data-text="Home">Home</router-link></li>
-              <li v-on:click="navToggle"><router-link to="/blog" data-text="Blog">Blog</router-link></li>
-            </ul>
-          </div>
-            <span class='menuIcon' id="toggle" v-on:click="navToggle">
-              <i class="fas fa-bars"></i>
-            </span>
-        </div>
-      </b-navbar>
-
-
-      
-      <!-- <b-navbar toggleable="lg" type="dark" style="background-color: rgb(36, 37, 39);">
-        <b-navbar-brand style="color: rgb(131, 131, 131)" href="/">
-            <strong>Kendall Roberts</strong>
-        </b-navbar-brand>
-
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-        <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav>
-            <b-nav-item to="/">Home</b-nav-item>
-            <b-nav-item to="/blog">Blog</b-nav-item>
-             <b-nav-item to="/projects">Projects</b-nav-item> 
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar> -->
-    
+      <nav-bar></nav-bar>
       <router-view></router-view>  
     </div>
-    <footer id="sticky-footer">
-      <div class="container text-center">
-        <h6><strong>&copy; Kendall Roberts</strong></h6>
-        <div class="icons">
-          <a href="https://github.com/kendall1978?tab=repositories">
-          <i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/kendall-roberts-1b8b3a171/">
-          <i class="fab fa-linkedin"></i></a>
-          <a href="https://twitter.com/kendertsrondall">
-          <i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/kendall_roberts49/">
-          <i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </footer>
+    <foot-bar></foot-bar>
   </div>
 </template>
 
 <script>
 import jumpMe from "./assets/jumpMe2.jpg";
+import NavBar from './components/NavBar';
+import FootBar from './components/FootBar';
+
 
 
 export default {
+  components:{
+    NavBar,
+    FootBar
+  },
   name: 'app',
   data(){
     return{
@@ -71,12 +27,7 @@ export default {
     }
   },
     methods: {
-    navToggle: function(){
-      const nav = document.getElementById("nav");
-      const toggle = document.getElementById("toggle");
-      nav.classList.toggle('active');
-      toggle.classList.toggle('active');
-    }
+    
   }
   
 }
