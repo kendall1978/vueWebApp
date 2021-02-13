@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import FirebaseApp from '../firebase';
 import jumpMe from "../assets/jumpMe2.jpg";
 export default {
     name: 'NavBar',
@@ -36,11 +35,6 @@ export default {
         }
     },
     methods: {
-        async logout (){
-            await FirebaseApp.signout()
-
-            this.$router.push('/')
-        },
         navToggle: function(){
             const nav = document.getElementById("nav");
             const toggle = document.getElementById("toggle");

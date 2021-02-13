@@ -6,33 +6,37 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import router from './router';
 import store from './store';
-import firebase from 'firebase/app'
-import 'firebase/auth'
-import FirebaseApp from './firebase'
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import axios from "axios";
 
+Vue.prototype.$axios = axios;
+Vue.config.productionTip = false;
 
 Vue.use(BootstrapVue);
 
-let app
-
-const init = () => {
-  if (!app) {
-    app = new Vue({
-      router,
-      store,
-      render: h => h(App)
-    }).$mount('#app')
-  }
+const config = {
+  apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
+  authDomain: process.env.VUE_APP_FIREBASE_PROJECT_ID+".firebaseapp.com",
+  projectId: process.env.VUE_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.VUE_APP_FIREBASE_PROJECT_ID+".appspot.com",
+  messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.VUE_APP_FIREBASE_ID,
+  measurementId: process.env.VUE_APP_MEASUREMENT_ID
 }
 
-firebase.auth().onAuthStateChanged(user => {
-  if (user) {
-    store.commit('setUser', user)
-    FirebaseApp.init()
+firebase.initializeApp(config);
 
-  }else {
-    store.commit('setUser', null)
+let app
+
+firebase.auth().onAuthStateChanged(user => {
+  console.log("user", user);
+  if(!app){
+    app = new Vue({
+      router, 
+      store,
+      render: h => h(App)
+    }).$mount("#app");
   }
-  console.log(user);
-  init()
-})
+});
+

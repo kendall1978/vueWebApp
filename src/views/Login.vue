@@ -1,5 +1,5 @@
 <template>
-      <b-container class="mt-4">
+  <b-container class="mt-4">
     <b-row>
       <b-col
         sm="8"
@@ -8,7 +8,7 @@
         offset-md="3"
         lg="4"
         offset-lg="4">
-        <b-form v-on:submit.prevent="login">
+        <b-form @submit.prevent="login">
           <b-form-group label="Email">
             <b-form-input
               v-model.trim="email"
@@ -40,23 +40,33 @@
 </template>
 
 <script>
-import FirebaseApp from '../firebase'
+import * as firebase from "firebase/app";
+import "firebase/auth";
+
 
 export default {
     name: 'login',
     data(){
         return{
-            email: null,
-            password: null,
-            errorMsg: null
+            email: "",
+            password: "",
+            errorMsg: ""
         }
     },
     methods: {
-        async login(){
-            this.errorMsg = null
-            let result = await FirebaseApp.signin(this.email, this.password)
-            if(result.message) this.errorMsg = result.message
-            else this.$router.push('/admin')
+        login(){
+          console.log("what up boy")
+          try{
+            const user = firebase.default.auth()
+              .signInWithEmailAndPassword(this.email, this.password)
+              .then(data => {
+                console.log(data);
+                this.$router.replace({ path: "/admin" });
+              })
+            console.log(user);
+          }catch(err){
+            console.log(err);
+          }
         }
     }
 }
