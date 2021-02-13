@@ -45,7 +45,7 @@ export default {
             this.toggleCreate = !this.toggleCreate
         },
         createPage(){
-            this.$router.replace({path: "/"});
+            this.$router.replace({path: "/create"});
         }
     },
     created() {
