@@ -55,7 +55,6 @@ export default {
     },
     methods: {
         login(){
-          console.log("what up boy")
           try{
             const user = firebase.default.auth()
               .signInWithEmailAndPassword(this.email, this.password)
