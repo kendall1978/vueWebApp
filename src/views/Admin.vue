@@ -5,12 +5,11 @@
         <h1>Hello Kendall</h1>
       </b-col>
     </b-row>
-
     <b-row>
       <b-col>
           <b-list-group>
             <h3>Blog Posts</h3>
-              <b-list-group-item v-for="post in blogPosts" v-bind:key="post.id"
+              <b-list-group-item v-for="post in posts" v-bind:key="post.id"
               button>
                 {{post.title}}
               </b-list-group-item>
@@ -18,7 +17,14 @@
       </b-col>
 
     </b-row> 
-    <b-button class="addButton" v-on:click="createPage"><i class="fas fa-plus"></i></b-button>
+    <b-row>
+      <b-col>
+        <b-button class="addButton" v-on:click="createPage"><i class="fas fa-plus"></i></b-button>
+      </b-col>
+      <b-col><b-button class="signOutButton" v-on:click="signOut">LogOut</b-button></b-col>
+    </b-row>
+    
+
 
 
   </b-container>
@@ -29,40 +35,28 @@ import firebase from 'firebase';
 
 export default {
     name: 'admin',
-    components: {
-
-    },
-    data(){
-        return{
-            blogPosts: []
-        }
-    },
     computed: {
-
+      posts(){
+        return this.$store.getters.getPosts
+      }
     },
     methods: {
         togglePost (){
             this.toggleCreate = !this.toggleCreate
         },
         createPage(){
-            this.$router.replace({path: "/create"});
-        }
-    },
-    created() {
-      firebase.firestore().collection('blog-posts').orderBy('date').get().then((querySnapshot)=>{
-        this.loading = false
-        querySnapshot.forEach((doc) => {
-            const data = {
-            'id' : doc.data().id,
-            'title' : doc.data().title,
-            'content' : doc.data().content,
-            'date' : doc.data().date.toDate(),
-            'imageUrl' : doc.data().imageUrl
-            }
-            this.blogPosts.push(data)
-
-        })
-      })
+            this.$router.replace({name: "create"});
+        },
+        signOut() {
+        firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace({
+            name: "home"
+          });
+        });
+    }
     }
 }
 </script>
@@ -88,5 +82,10 @@ h2, h3, h1{
 button{
     padding: 20px auto;
     margin: 10px auto;
+}
+
+.signOutButton{
+  margin: 30px auto;
+  border-radius: 9px;
 }
 </style>

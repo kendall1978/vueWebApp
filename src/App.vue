@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import jumpMe from "./assets/jumpMe2.jpg";
 import NavBar from './components/NavBar';
 import FootBar from './components/FootBar';
 
@@ -23,11 +22,10 @@ export default {
   name: 'app',
   data(){
     return{
-      jumpMe
     }
   },
-    methods: {
-    
+    created(){
+      this.$store.dispatch('getPostsAction')
   }
   
 }
@@ -57,7 +55,7 @@ export default {
   align-items: center;
   background: rgb(36, 37, 39);
   
-  transition: all 475ms ease-out;
+  transition: all 900ms ease-in-out;
   z-index: 10;
 
 }

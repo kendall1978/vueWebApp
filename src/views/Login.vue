@@ -25,11 +25,6 @@
               required>
             </b-form-input>
           </b-form-group>
-          <b-form-group
-            v-if="errorMsg"
-            class="text-danger">
-            <small>{{ errorMsg }}</small>
-          </b-form-group>
           <b-button
             type="submit"
             variant="primary">Login</b-button>
@@ -40,7 +35,7 @@
 </template>
 
 <script>
-import * as firebase from "firebase/app";
+import firebase from "firebase";
 import "firebase/auth";
 
 
@@ -50,22 +45,25 @@ export default {
         return{
             email: "",
             password: "",
-            errorMsg: ""
+            error: null
         }
+    },
+    created(){
     },
     methods: {
         login(){
-          try{
-            const user = firebase.default.auth()
-              .signInWithEmailAndPassword(this.email, this.password)
-              .then(data => {
-                console.log(data);
-                this.$router.replace({ path: "/admin" });
-              })
-            console.log(user);
-          }catch(err){
-            console.log(err);
-          }
+          firebase
+          .auth()
+          .signInWithEmailAndPassword(this.email, this.password)
+          .then(data => {
+            this.$router.replace({name: "home"});
+            console.log(data);
+          }).catch(err => {
+            this.error = err.message;
+          })
+        },
+        checkUser(){
+          return this.$store.getters.auth
         }
     }
 }

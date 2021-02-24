@@ -4,8 +4,10 @@ import Blog from './views/Blog.vue';
 import Login from './views/Login.vue';
 import Admin from './views/Admin.vue';
 import Create from './views/Create.vue';
-import * as firebase from 'firebase/app';
-import 'firebase/auth'
+import FourOhFour from './views/FourOhFour.vue';
+import RouterPassThrough from "./components/RouterPassThrough.vue";
+import { store } from "./store";
+
 
 // import Store from '@/store'
 import VueRouter from 'vue-router';
@@ -32,19 +34,28 @@ const routes = [
     },
     {
         path: '/admin',
-        name: 'name',
-        component: Admin,
+        component: RouterPassThrough,
         meta: {
-            auth: true
-        }
+            requiresAuth: true
+        },
+        children: [
+            {
+                path: '',
+                name: 'admin',
+                component: Admin
+            },
+            {
+                path: 'create',
+                name: 'create',
+                component: Create
+            }
+
+        ]
     },
     {
-        path: '/create',
-        name: 'create',
-        component: Create,
-        meta: {
-            auth: true
-        }
+        path: '/*',
+        name: '404',
+        component: FourOhFour
     }
 ]
 
@@ -56,8 +67,7 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     const requiresAuth = to.matched.some( record => record.meta.requiresAuth);
-    const isAuthenticated = firebase.default.auth().currentUser;
-    console.log("isauthenticated", isAuthenticated)
+    const isAuthenticated = store.state.user.loggedIn;
     if(requiresAuth && !isAuthenticated){
         next({
             path: '/login'

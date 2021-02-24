@@ -5,13 +5,20 @@
         </b-navbar-brand>
         <div class="pageMenu" id="nav">
           <div class="banner">
-            <img :src="jumpMe">
+            <img :src=navPic.img>
           </div>
           <div class="screenNav">
-            <ul>
+            <ul v-if="user.loggedIn == true">
+              <li v-on:click="navToggle"><router-link to="/" data-text="Home">Home</router-link></li>
+              <li v-on:click="navToggle"><router-link to="/blog" data-text="Blog">Blog</router-link></li>
+              <li v-on:click="navToggle"><router-link to="/admin" data-text="admin">Admin</router-link></li>
+              
+            </ul>
+            <ul v-else>
               <li v-on:click="navToggle"><router-link to="/" data-text="Home">Home</router-link></li>
               <li v-on:click="navToggle"><router-link to="/blog" data-text="Blog">Blog</router-link></li>
               <li v-on:click="navToggle"><router-link to="/login" data-text="login">Login</router-link></li>
+
             </ul>
           </div>
             <span class='menuIcon' id="toggle" v-on:click="navToggle">
@@ -22,26 +29,39 @@
 </template>
 
 <script>
-import jumpMe from "../assets/jumpMe2.jpg";
+import { mapGetters } from "vuex";
+import firebase from "firebase";
+import "firebase/auth"; 
+
+
 export default {
     name: 'NavBar',
     data(){
         return{
-            jumpMe
+          navPic: ""
         }
     },
     computed: {
-        user (){
-            return this.$store.state.user
-        }
+      ...mapGetters({
+        user: "user"
+      })
     },
     methods: {
-        navToggle: function(){
-            const nav = document.getElementById("nav");
-            const toggle = document.getElementById("toggle");
-            nav.classList.toggle('active');
-            toggle.classList.toggle('active');
+      navToggle(){
+        const nav = document.getElementById("nav");
+        const toggle = document.getElementById("toggle");
+        nav.classList.toggle('active');
+        toggle.classList.toggle('active');
     }
-    }
+  }, created(){
+    firebase.firestore().collection("assets").doc('navPic')
+    .get().then(snapshot =>{
+      if(snapshot.exists){
+        this.navPic = snapshot.data()
+      }else{
+        console.log("Doesnt Exist")
+      }
+    })
+  }
 }
 </script>

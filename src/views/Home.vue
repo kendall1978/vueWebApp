@@ -5,7 +5,7 @@
     <b-row>
       <b-col xl="6">
         <b-card no-body class="text-center">
-          <b-card-img v-bind:src="mainMe"  
+          <b-card-img :src="mugShot.img"  
           class="rounded-circle"></b-card-img>
         </b-card>
       </b-col>
@@ -46,17 +46,14 @@
 </template>
 
 <script>
-// Importing my images
-import mainMe from '../assets/mainMe.jpg';
-
-
+import firebase from "firebase"; 
 
 export default {
   name: 'home',
   data(){
     // Returning my images to be usable as well as laying out my json.
       return{
-        mainMe,
+        mugShot: "",
         cardContent: [{
           id: 1,
           title: "My Education",
@@ -75,6 +72,21 @@ export default {
           
         ]
       }
+  },
+  created(){
+      const ref = firebase.firestore().collection('assets').doc('homePic')
+      ref.get()
+      .then(snapshot => {
+        console.log(snapshot.data)
+          if(snapshot.exists){
+            this.mugShot = snapshot.data()
+          }else{
+            console.log('Doesnt exist')
+          }
+      })
+
+  },
+  methods: {
   },
 
   props: {}
