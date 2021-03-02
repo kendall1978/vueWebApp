@@ -11,7 +11,8 @@
             <h3>Blog Posts</h3>
               <b-list-group-item v-for="post in posts" v-bind:key="post.id"
               button>
-                {{post.title}}
+                {{post.title}} 
+                <b-btn id="trash" v-on:click="deletePost(post.id, post)" ><i class="fas fa-trash"></i></b-btn>
               </b-list-group-item>
           </b-list-group>
       </b-col>
@@ -56,7 +57,11 @@ export default {
             name: "home"
           });
         });
-    }
+      },
+      deletePost(id, index){
+        firebase.firestore().collection('blog-posts').doc(id).delete()
+        this.$store.dispatch("deletePostAction", index)
+      }
     }
 }
 </script>
@@ -87,5 +92,16 @@ button{
 .signOutButton{
   margin: 30px auto;
   border-radius: 9px;
+}
+
+#trash{
+  color: red;
+  background-color: #fff;
+  border: none;
+  transition: 500ms ease-in-out;
+}
+
+#trash:hover{
+  transform: scale(1.2);
 }
 </style>

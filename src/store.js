@@ -45,6 +45,10 @@ export const store = new Vuex.Store({
                 'imageUrl' : data.imageUrl
             }
             state.posts.push(post)
+        },
+        deletePost(state, payload){
+            const i = state.posts.map(item => item.id).indexOf(payload);
+            state.posts.splice(i, 1);
         }
     },
     actions: {
@@ -77,6 +81,9 @@ export const store = new Vuex.Store({
                         console.log("Doesnt Exist")
                     }
                 })
+        },
+        deletePostAction({commit}, index){
+            commit('deletePost', index)
         }
 
     },
